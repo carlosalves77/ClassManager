@@ -1,4 +1,16 @@
 <resources>
     <string name="app_name">ClassManager</string>
     <string name="logo_image">LogoImage</string>
+    <string name="calendar">Calendário</string>
+    <string name="back_button">backBtn</string>
+    <string name="Day">01</string>
+    <string name="Mouth">OUT</string>
+    <string name="name_teacher">Ismael</string>
+    <string name="teacher">Professor</string>
+    <string name="ImageProfile">ImageProfile</string>
+    <string name="close_icon">ic_close</string>
+    <string name="imgNoticeBoard">imgNoticeBoard</string>
+    <string name="NoticeBoard">Quadro de Notícias</string>
+
+
 </resources>

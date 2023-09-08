@@ -41,6 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="7dp"
+                android:fontFamily="@font/nunito_medium"
                 android:text="@string/name_teacher"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
@@ -49,6 +50,7 @@
                 android:id="@+id/occupationText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_medium"
                 android:layout_marginStart="7dp"
                 android:text="@string/teacher"
                 android:textColor="@color/gray"
@@ -90,6 +92,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/blue"
         android:textSize="20sp"
+        android:fontFamily="@font/nunito_bold"
         android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
         android:text="@string/NoticeBoard"
@@ -114,11 +117,22 @@
         android:textColor="@color/blue"
         android:textSize="20sp"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/nunito_bold"
         android:layout_marginStart="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/noticeRv" />
 
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/homeWorkRv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Tarefas" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,6 +11,13 @@
     <string name="close_icon">ic_close</string>
     <string name="imgNoticeBoard">imgNoticeBoard</string>
     <string name="NoticeBoard">Quadro de Notícias</string>
+    <string name="web_client_id">1060966786377-33sel7pcvtpn42n5uulnnd0ppbss3jdp.apps.googleusercontent.com</string>
+    <string name="signOut">Deslogar</string>
+    <string name="profile">Perfil</string>
+    <string name="class_icon">Turmas</string>
+    <string name="support_icon">Suporte</string>
+    <string name="notification_icon">Notificações</string>
+
 
 
 </resources>

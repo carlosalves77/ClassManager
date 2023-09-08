@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
 
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, Home::class.java))
+            startActivity(Intent(this, SignIn::class.java))
             finish()
         }, 3000)
 

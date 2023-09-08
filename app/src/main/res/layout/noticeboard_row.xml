@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/noticeBoard"
+
     android:layout_width="130dp"
     android:layout_height="150dp"
-    android:backgroundTint="@color/blueClean"
     android:orientation="vertical"
     app:cardCornerRadius="12dp"
     android:layout_marginEnd="10dp"
@@ -12,8 +11,10 @@
     >
 
     <LinearLayout
+        android:id="@+id/noticeBoard"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/blueClean"
         android:orientation="vertical"
         android:padding="10dp">
 
@@ -38,14 +39,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
+            android:fontFamily="@font/nunito_regular"
             android:textColor="@color/black"
             android:textSize="13sp"
-            android:textStyle="normal" />
+             />
 
         <TextView
             android:id="@+id/dateTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_regular"
             android:layout_marginTop="5dp"
             android:textColor="@color/gray"
             android:textSize="11sp" />

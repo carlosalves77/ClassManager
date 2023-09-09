@@ -4,9 +4,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.CalendarView
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.carlos.classmanager.R
+import com.carlos.classmanager.adapter.CalendarAdapter
 import com.carlos.classmanager.databinding.ActivityCalendarBinding
+import com.carlos.classmanager.model.Calendar
+
 
 class Calendar : AppCompatActivity(), View.OnClickListener {
 
@@ -17,6 +20,9 @@ class Calendar : AppCompatActivity(), View.OnClickListener {
     private var total: Int = 0
 
     private lateinit var binding: ActivityCalendarBinding
+    private lateinit var mAdapter: CalendarAdapter
+    private var mCalendar = ArrayList<Calendar>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCalendarBinding.inflate(layoutInflater)
@@ -29,6 +35,8 @@ class Calendar : AppCompatActivity(), View.OnClickListener {
             day = i2
 
         }
+
+        setCalendarRv()
     }
 
     override fun onClick(v: View?) {
@@ -39,4 +47,69 @@ class Calendar : AppCompatActivity(), View.OnClickListener {
             }
         }
     }
+
+    private fun setCalendarRv() {
+        val recyclerViewCalendar = binding.recyclerViewCalendar
+        recyclerViewCalendar.setHasFixedSize(true)
+        recyclerViewCalendar.layoutManager = LinearLayoutManager(this)
+
+        mAdapter = CalendarAdapter(mCalendar)
+        recyclerViewCalendar.adapter = mAdapter
+
+        addCalendarList()
+    }
+
+    private fun addCalendarList() {
+        mCalendar.add(
+            Calendar(
+                "01", "OUT", "Dia das Crianças", "Feriado"
+
+            )
+
+        )
+        mCalendar.add(
+            Calendar(
+                "01", "OUT", "Dia das Crianças", "Feriado"
+
+            )
+
+        )
+        mCalendar.add(
+            Calendar(
+                "01", "OUT", "Dia das Crianças", "Feriado"
+
+            )
+
+        )
+        mCalendar.add(
+            Calendar(
+                "01", "OUT", "Dia das Crianças", "Feriado"
+
+            )
+
+        )
+        mCalendar.add(
+            Calendar(
+                "01", "OUT", "Dia das Crianças", "Feriado"
+
+            )
+
+        )
+        mCalendar.add(
+            Calendar(
+                "01", "OUT", "Dia das Crianças", "Feriado"
+
+            )
+
+        )
+        mCalendar.add(
+            Calendar(
+                "01", "OUT", "Dia das Crianças", "Feriado"
+
+            )
+
+        )
+    }
+
+
 }

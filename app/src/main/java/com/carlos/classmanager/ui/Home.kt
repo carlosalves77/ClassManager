@@ -1,16 +1,21 @@
 package com.carlos.classmanager.ui
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.carlos.classmanager.R
 import com.carlos.classmanager.adapter.HomeworkAdapter
 import com.carlos.classmanager.adapter.NoticeAdapter
 import com.carlos.classmanager.databinding.ActivityHomeBinding
 import com.carlos.classmanager.model.HomeWork
 import com.carlos.classmanager.model.Notices
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 
 class Home : AppCompatActivity(), View.OnClickListener {
 
@@ -20,6 +25,7 @@ class Home : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var adapterNotice: NoticeAdapter
     private lateinit var adapterHomeWork: HomeworkAdapter
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,9 +37,23 @@ class Home : AppCompatActivity(), View.OnClickListener {
 
         binding.menuOption.setOnClickListener(this)
 
+
+
+        getAccountInfo()
         setNoticeRv()
         setHomeworkRv()
 
+    }
+
+    private fun getAccountInfo() {
+        val sharedPreferences: SharedPreferences = getSharedPreferences("sharedAccountInfo", Context.MODE_PRIVATE)
+        val nameProfile = sharedPreferences.getString("NameInfo", null)
+        val profileUrl = sharedPreferences.getString("photoUrl", null)
+
+       Glide.with(this).load(profileUrl).into(binding.imgProfile)
+
+        binding.nameTeacherText.text = nameProfile
+//        binding.imgProfile.setImageResource(image)
     }
 
 
@@ -47,7 +67,6 @@ class Home : AppCompatActivity(), View.OnClickListener {
 
     private fun showMenu() {
         startActivity(Intent(this, Menu::class.java))
-
     }
 
     private fun setNoticeRv() {
@@ -123,12 +142,6 @@ class Home : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun addHomeworkList() {
-//        mHomeWork.add(HomeWork("Preparar planos de aula", "Hoje / 09.10.2023"))
-//        mHomeWork.add(HomeWork("Preparar planos de aula", "Hoje / 09.10.2023"))
-//        mHomeWork.add(HomeWork("Preparar planos de aula", "Hoje / 09.10.2023"))
-//        mHomeWork.add(HomeWork("Preparar planos de aula", "Hoje / 09.10.2023"))
-//        mHomeWork.add(HomeWork("Preparar planos de aula", "Hoje / 09.10.2023"))
-//        mHomeWork.add(HomeWork("Preparar planos de aula", "Hoje / 09.10.2023"))
         mHomeWork.add(HomeWork("Ensinar conteúdo curricular", "Data da Tarefa"))
         mHomeWork.add(HomeWork("Avaliar o progresso dos alunos", "Data da Tarefa"))
         mHomeWork.add(HomeWork("Dar feedback aos alunos", "Data da Tarefa"))

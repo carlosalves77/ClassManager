@@ -5,12 +5,13 @@
     <string name="back_button">backBtn</string>
     <string name="Day">01</string>
     <string name="Mouth">OUT</string>
-    <string name="name_teacher">Ismael</string>
+    <string name="name_teacher">Ismael Rodrigues</string>
     <string name="teacher">Professor</string>
     <string name="ImageProfile">ImageProfile</string>
     <string name="close_icon">ic_close</string>
     <string name="imgNoticeBoard">imgNoticeBoard</string>
     <string name="NoticeBoard">Quadro de Notícias</string>
+    <string name="HomeWork">Tarefas</string>
     <string name="web_client_id">1060966786377-33sel7pcvtpn42n5uulnnd0ppbss3jdp.apps.googleusercontent.com</string>
     <string name="signOut">Deslogar</string>
     <string name="profile">Perfil</string>

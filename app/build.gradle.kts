@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -65,4 +66,7 @@ dependencies {
     // Google Auth
     implementation("com.google.firebase:firebase-auth-ktx:22.1.1")
     implementation("com.google.android.gms:play-services-auth:20.7.0")
+
+    //Glide
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
 }

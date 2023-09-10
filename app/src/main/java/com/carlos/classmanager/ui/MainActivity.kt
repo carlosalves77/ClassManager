@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(this, SignIn::class.java))
             finish()
-        }, 3000)
+        }, 2000)
 
     }
 

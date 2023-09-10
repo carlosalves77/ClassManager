@@ -1,15 +1,25 @@
 package com.carlos.classmanager.ui
 
 import android.app.Activity
+import android.app.KeyguardManager
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.SharedPreferences
+import android.content.pm.PackageManager
+import android.hardware.biometrics.BiometricPrompt
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CancellationSignal
 import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.lifecycle.ViewModelProvider
+import androidx.annotation.RequiresApi
+import androidx.core.app.ActivityCompat
+import androidx.core.view.isGone
+import androidx.core.view.isInvisible
+import androidx.core.view.isVisible
 import com.carlos.classmanager.R
 import com.carlos.classmanager.databinding.ActivitySignInBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -25,8 +35,24 @@ class SignIn : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
-
     private lateinit var binding: ActivitySignInBinding
+
+    private var cancellationSignal: CancellationSignal? = null
+    private val authenticationCallback: BiometricPrompt.AuthenticationCallback
+        get() = @RequiresApi(Build.VERSION_CODES.P)
+        object : BiometricPrompt.AuthenticationCallback() {
+            override fun onAuthenticationError(errorCode: Int, errString: CharSequence?) {
+                super.onAuthenticationError(errorCode, errString)
+                notifyUser("Authentication error: $errString")
+            }
+
+            override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult?) {
+                super.onAuthenticationSucceeded(result)
+
+                startActivity(Intent(this@SignIn, Home::class.java))
+            }
+        }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivitySignInBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
@@ -34,19 +60,35 @@ class SignIn : AppCompatActivity(), View.OnClickListener {
 
         auth = FirebaseAuth.getInstance()
 
+
         googleSignIn()
         authAllReadyOn()
+        checkBiometricSupport()
+        binding.signInBtn.setOnClickListener(this)
         binding.signInBtn.setOnClickListener(this)
     }
 
 
+    @RequiresApi(Build.VERSION_CODES.P)
     override fun onClick(v: View?) {
         when (v!!.id) {
             R.id.signInBtn -> {
                 signInGoogle()
+                binding.progressBar.isVisible = true
+                binding.progressBar.bringToFront()
+                binding.loadingPage.isVisible = true
+            }
+            R.id.signInBtn -> {
+                val biometricPrompt = BiometricPrompt.Builder(this)
+                    .setTitle("Se indentifique")
+                    .setSubtitle("Autenticação é requisitada")
+                    .setDescription("Esse app fingerprint")
+                    .setNegativeButton("Cancell", this.mainExecutor) { _, _ ->
+                        notifyUser("Autentication cancelled")
+                    }
+                biometricPrompt.build().authenticate(getCancellationSignal(), mainExecutor, authenticationCallback)
             }
         }
-
     }
 
     private fun googleSignIn() {
@@ -90,19 +132,12 @@ class SignIn : AppCompatActivity(), View.OnClickListener {
         auth.signInWithCredential(credential).addOnCompleteListener {
             if (it.isSuccessful) {
                 val intent = Intent(this, Home::class.java)
-                val name = account.displayName
-                val email = account.email
-                val photoUrl = account.photoUrl
-
-                val sharedPreferences: SharedPreferences = getSharedPreferences("sharedAccountInfo", Context.MODE_PRIVATE)
-                 val editor = sharedPreferences.edit()
-                editor.apply {
-                    putString("NameInfo", name)
-                    putString("photoUrl", photoUrl.toString())
-                    putString("EmailInfo", email)
-                }.apply()
-
                 startActivity(intent)
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+                binding.progressBar.isVisible = true
+                binding.loadingPage.isVisible = true
+
+                finish()
             } else {
                 Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show()
             }
@@ -112,10 +147,47 @@ class SignIn : AppCompatActivity(), View.OnClickListener {
     private fun authAllReadyOn() {
         if (auth.currentUser != null) {
             val intent = Intent(this, Home::class.java)
-
             startActivity(intent)
-
+            binding.progressBar.isGone = true
+            binding.loadingPage.isGone = true
+            finish()
         }
+    }
+
+    private fun notifyUser(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun getCancellationSignal() : CancellationSignal {
+        cancellationSignal = CancellationSignal()
+        cancellationSignal?.setOnCancelListener {
+            notifyUser("Authentication was cancelled by the user")
+        }
+        return cancellationSignal as CancellationSignal
+    }
+
+    private fun checkBiometricSupport(): Boolean {
+
+        val keyguardManager = getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager
+
+        if (!keyguardManager.isKeyguardSecure) {
+            notifyUser("Fingerprint auth has not enabled")
+            return false
+        }
+
+        if (ActivityCompat.checkSelfPermission(
+                this,
+                android.Manifest.permission.USE_BIOMETRIC
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            notifyUser("Fingerprint authentication permisson is not enable")
+            return false
+        }
+
+        return if (packageManager.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT)) {
+            true
+        } else true
+
     }
 
 }

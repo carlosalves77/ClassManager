@@ -16,6 +16,7 @@ import com.carlos.classmanager.databinding.ActivityHomeBinding
 import com.carlos.classmanager.model.HomeWork
 import com.carlos.classmanager.model.Notices
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.firebase.auth.FirebaseAuth
 
 class Home : AppCompatActivity(), View.OnClickListener {
 
@@ -25,6 +26,8 @@ class Home : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var adapterNotice: NoticeAdapter
     private lateinit var adapterHomeWork: HomeworkAdapter
+
+    private lateinit var auth: FirebaseAuth
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,7 +39,7 @@ class Home : AppCompatActivity(), View.OnClickListener {
 //        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
 
         binding.menuOption.setOnClickListener(this)
-
+        auth = FirebaseAuth.getInstance()
 
 
         getAccountInfo()
@@ -46,14 +49,13 @@ class Home : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun getAccountInfo() {
-        val sharedPreferences: SharedPreferences = getSharedPreferences("sharedAccountInfo", Context.MODE_PRIVATE)
-        val nameProfile = sharedPreferences.getString("NameInfo", null)
-        val profileUrl = sharedPreferences.getString("photoUrl", null)
-
-       Glide.with(this).load(profileUrl).into(binding.imgProfile)
-
-        binding.nameTeacherText.text = nameProfile
-//        binding.imgProfile.setImageResource(image)
+        if (auth.currentUser != null) {
+            val nameProfile = auth.currentUser?.displayName
+            val profileUrl = auth.currentUser?.photoUrl
+            binding.nameTeacherText.text = nameProfile
+            Glide.with(this).load(profileUrl).into(binding.imgProfile)
+        }
+//        binding.imgProfile.setImageResource(image
     }
 
 
@@ -66,7 +68,9 @@ class Home : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun showMenu() {
-        startActivity(Intent(this, Menu::class.java))
+        val intent = Intent(this, Menu::class.java)
+        startActivity(intent)
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
     }
 
     private fun setNoticeRv() {

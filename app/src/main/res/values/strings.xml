@@ -18,6 +18,10 @@
     <string name="class_icon">Turmas</string>
     <string name="support_icon">Suporte</string>
     <string name="notification_icon">Notificações</string>
+    <string name="login_text">Login</string>
+    <string name="password_text">Senha</string>
+    <string name="forget_password_text">Esqueci a senha</string>
+    <string name="signIn_text">Logar</string>
 
 
 

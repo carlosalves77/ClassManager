@@ -42,10 +42,12 @@ class Menu : AppCompatActivity(), View.OnClickListener {
            R.id.sighOutBtn -> {
               startActivity(Intent(this, SignIn::class.java ))
                auth.signOut()
+               overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
                finish()
            }
            R.id.calendarBtn -> {
                startActivity(Intent(this, Calendar::class.java))
+               overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
                finish()
            }
        }
@@ -53,13 +55,13 @@ class Menu : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun getAccountInfo() {
-        val sharedPreferences: SharedPreferences = getSharedPreferences("sharedAccountInfo", Context.MODE_PRIVATE)
-        val nameProfile = sharedPreferences.getString("NameInfo", null)
-        val profileUrl = sharedPreferences.getString("photoUrl", null)
 
-        Glide.with(this).load(profileUrl).into(binding.imgProfile)
-
-        binding.nameTeacherText.text = nameProfile
+        if (auth.currentUser != null) {
+            val nameProfile = auth.currentUser?.displayName
+            val profileUrl = auth.currentUser?.photoUrl
+            binding.nameTeacherText.text = nameProfile
+            Glide.with(this).load(profileUrl).into(binding.imgProfile)
+        }
 
     }
 }

@@ -22,6 +22,7 @@
     <string name="password_text">Senha</string>
     <string name="forget_password_text">Esqueci a senha</string>
     <string name="signIn_text">Logar</string>
+    <string name="loading_text">Loading...</string>
 
 
 

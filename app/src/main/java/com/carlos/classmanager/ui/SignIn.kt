@@ -1,11 +1,10 @@
 package com.carlos.classmanager.ui
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.KeyguardManager
 import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
-import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.hardware.biometrics.BiometricPrompt
 import android.os.Build
@@ -18,10 +17,10 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
 import androidx.core.view.isGone
-import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import com.carlos.classmanager.R
 import com.carlos.classmanager.databinding.ActivitySignInBinding
+import com.carlos.classmanager.databinding.LoadingLayoutBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -36,6 +35,7 @@ class SignIn : AppCompatActivity(), View.OnClickListener {
     private lateinit var auth: FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var binding: ActivitySignInBinding
+    private lateinit var loadingBinding: LoadingLayoutBinding
 
     private var cancellationSignal: CancellationSignal? = null
     private val authenticationCallback: BiometricPrompt.AuthenticationCallback
@@ -53,6 +53,7 @@ class SignIn : AppCompatActivity(), View.OnClickListener {
             }
         }
 
+    @SuppressLint("InflateParams")
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivitySignInBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
@@ -66,6 +67,15 @@ class SignIn : AppCompatActivity(), View.OnClickListener {
         checkBiometricSupport()
         binding.signInBtn.setOnClickListener(this)
         binding.signInBtn.setOnClickListener(this)
+
+
+//        loadingBinding = LoadingLayoutBinding.inflate(layoutInflater)
+//        setContentView(loadingBinding.root)
+//
+//        loadingBinding.loadingPage.isGone = true
+
+
+
     }
 
 
@@ -74,10 +84,11 @@ class SignIn : AppCompatActivity(), View.OnClickListener {
         when (v!!.id) {
             R.id.signInBtn -> {
                 signInGoogle()
-                binding.progressBar.isVisible = true
-                binding.progressBar.bringToFront()
+                binding.loadingPage.bringToFront()
                 binding.loadingPage.isVisible = true
+
             }
+
             R.id.signInBtn -> {
                 val biometricPrompt = BiometricPrompt.Builder(this)
                     .setTitle("Se indentifique")
@@ -86,7 +97,8 @@ class SignIn : AppCompatActivity(), View.OnClickListener {
                     .setNegativeButton("Cancell", this.mainExecutor) { _, _ ->
                         notifyUser("Autentication cancelled")
                     }
-                biometricPrompt.build().authenticate(getCancellationSignal(), mainExecutor, authenticationCallback)
+                biometricPrompt.build()
+                    .authenticate(getCancellationSignal(), mainExecutor, authenticationCallback)
             }
         }
     }
@@ -134,8 +146,7 @@ class SignIn : AppCompatActivity(), View.OnClickListener {
                 val intent = Intent(this, Home::class.java)
                 startActivity(intent)
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
-                binding.progressBar.isVisible = true
-                binding.loadingPage.isVisible = true
+
 
                 finish()
             } else {
@@ -148,8 +159,7 @@ class SignIn : AppCompatActivity(), View.OnClickListener {
         if (auth.currentUser != null) {
             val intent = Intent(this, Home::class.java)
             startActivity(intent)
-            binding.progressBar.isGone = true
-            binding.loadingPage.isGone = true
+            binding.loadingPage.isVisible = false
             finish()
         }
     }
@@ -158,7 +168,7 @@ class SignIn : AppCompatActivity(), View.OnClickListener {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
-    private fun getCancellationSignal() : CancellationSignal {
+    private fun getCancellationSignal(): CancellationSignal {
         cancellationSignal = CancellationSignal()
         cancellationSignal?.setOnCancelListener {
             notifyUser("Authentication was cancelled by the user")

@@ -1,12 +1,11 @@
 package com.carlos.classmanager.ui
 
-import android.content.Context
+
 import android.content.Intent
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
+import androidx.activity.OnBackPressedCallback
 import com.bumptech.glide.Glide
 import com.carlos.classmanager.R
 import com.carlos.classmanager.databinding.ActivityMenuBinding
@@ -21,22 +20,32 @@ class Menu : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-//        @Suppress("DEPRECATION")
-//        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
-
         auth = FirebaseAuth.getInstance()
 
         binding.icClose.setOnClickListener(this)
         binding.sighOutBtn.setOnClickListener(this)
         binding.calendarBtn.setOnClickListener(this)
+        binding.profileBtn.setOnClickListener(this)
 
         getAccountInfo()
+        handleBackButton()
+    }
 
+    private fun handleBackButton() {
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                startActivity(Intent(this@Menu, Home::class.java))
+                finish()
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+            }
+        })
     }
 
     override fun onClick(v: View?) {
        when (v!!.id) {
            R.id.ic_close -> {
+               startActivity(Intent(this, Home::class.java ))
+               overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
                finish()
            }
            R.id.sighOutBtn -> {
@@ -47,6 +56,11 @@ class Menu : AppCompatActivity(), View.OnClickListener {
            }
            R.id.calendarBtn -> {
                startActivity(Intent(this, Calendar::class.java))
+               overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+               finish()
+           }
+           R.id.profileBtn -> {
+               startActivity(Intent(this, Profile::class.java))
                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
                finish()
            }

@@ -16,11 +16,9 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
-import androidx.core.view.isGone
 import androidx.core.view.isVisible
 import com.carlos.classmanager.R
 import com.carlos.classmanager.databinding.ActivitySignInBinding
-import com.carlos.classmanager.databinding.LoadingLayoutBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -35,7 +33,6 @@ class SignIn : AppCompatActivity(), View.OnClickListener {
     private lateinit var auth: FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var binding: ActivitySignInBinding
-    private lateinit var loadingBinding: LoadingLayoutBinding
 
     private var cancellationSignal: CancellationSignal? = null
     private val authenticationCallback: BiometricPrompt.AuthenticationCallback
@@ -69,14 +66,9 @@ class SignIn : AppCompatActivity(), View.OnClickListener {
         binding.signInBtn.setOnClickListener(this)
 
 
-//        loadingBinding = LoadingLayoutBinding.inflate(layoutInflater)
-//        setContentView(loadingBinding.root)
-//
-//        loadingBinding.loadingPage.isGone = true
-
-
 
     }
+
 
 
     @RequiresApi(Build.VERSION_CODES.P)
@@ -89,7 +81,7 @@ class SignIn : AppCompatActivity(), View.OnClickListener {
 
             }
 
-            R.id.signInBtn -> {
+            R.id.loginBtn -> {
                 val biometricPrompt = BiometricPrompt.Builder(this)
                     .setTitle("Se indentifique")
                     .setSubtitle("Autenticação é requisitada")
@@ -148,7 +140,7 @@ class SignIn : AppCompatActivity(), View.OnClickListener {
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
 
 
-                finish()
+//                finish()
             } else {
                 Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show()
             }

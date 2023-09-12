@@ -1,11 +1,8 @@
 package com.carlos.classmanager.ui
 
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
@@ -15,7 +12,6 @@ import com.carlos.classmanager.adapter.NoticeAdapter
 import com.carlos.classmanager.databinding.ActivityHomeBinding
 import com.carlos.classmanager.model.HomeWork
 import com.carlos.classmanager.model.Notices
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.firebase.auth.FirebaseAuth
 
 class Home : AppCompatActivity(), View.OnClickListener {
@@ -55,7 +51,6 @@ class Home : AppCompatActivity(), View.OnClickListener {
             binding.nameTeacherText.text = nameProfile
             Glide.with(this).load(profileUrl).into(binding.imgProfile)
         }
-//        binding.imgProfile.setImageResource(image
     }
 
 

@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.activity.OnBackPressedCallback
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.carlos.classmanager.R
 import com.carlos.classmanager.adapter.CalendarAdapter
@@ -37,7 +38,9 @@ class Calendar : AppCompatActivity(), View.OnClickListener {
         }
 
         setCalendarRv()
+        handleBackButton()
     }
+
 
     override fun onClick(v: View?) {
         when (v!!.id) {
@@ -58,6 +61,16 @@ class Calendar : AppCompatActivity(), View.OnClickListener {
         recyclerViewCalendar.adapter = mAdapter
 
         addCalendarList()
+    }
+
+    private fun handleBackButton() {
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                startActivity(Intent(this@Calendar, Home::class.java))
+                finish()
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+            }
+        })
     }
 
     private fun addCalendarList() {

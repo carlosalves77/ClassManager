@@ -145,7 +145,6 @@
 
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/profileBtn"
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:backgroundTint="@color/white"
@@ -178,12 +177,13 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout4"
+        android:id="@+id/profileBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:gravity="center"
         android:orientation="vertical"
+        android:clickable="true"
         app:layout_constraintEnd_toStartOf="@+id/linearLayout5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
@@ -230,7 +230,7 @@
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout4"
+        app:layout_constraintStart_toEndOf="@+id/profileBtn"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
 
 

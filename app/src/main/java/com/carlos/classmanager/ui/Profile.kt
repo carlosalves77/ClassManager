@@ -53,9 +53,8 @@ class Profile : AppCompatActivity(), View.OnClickListener {
     private fun getAccountInfo() {
 
         if (auth.currentUser != null) {
-            binding.phoneProfile.text = auth.currentUser?.phoneNumber
             binding.namePerfil.text = auth.currentUser?.displayName
-            binding.emailPerfil.text = auth.currentUser?.phoneNumber
+            binding.emailPerfil.text = auth.currentUser?.email
             Glide.with(this).load(auth.currentUser?.photoUrl).into(binding.imgProfile)
         }
 

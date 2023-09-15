@@ -23,12 +23,12 @@
     <string name="forget_password_text">Esqueci a senha</string>
     <string name="signIn_text">Logar</string>
     <string name="loading_text">Carregando…</string>
-    <string name="profile_name">Nome</string>
-    <string name="icon_person_name">icon_name</string>
-    <string name="icon_person_email">icon_email</string>
-    <string name="profile_email">E-mail</string>
-    <string name="icon_person_phone">icon_phone</string>
-    <string name="profile_phone">Telefone</string>
+    <string name="ic_account">Minha conta</string>
+    <string name="ic_signOut">Deslogar</string>
+    <string name="ic_privacy">Privacidade</string>
+    <string name="ic_security">Segurança</string>
+
+
 
 
 </resources>

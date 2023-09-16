@@ -46,8 +46,8 @@ class Calendar : AppCompatActivity(), View.OnClickListener {
         when (v!!.id) {
             R.id.backBtn -> {
                 startActivity(Intent(this, Home::class.java))
-                finish()
                 overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+                finish()
             }
         }
     }

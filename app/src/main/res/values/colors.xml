@@ -7,6 +7,9 @@
     <color name="gray">#86888A</color>
     <color name="blueClean">#d5f4ff</color>
     <color name="greenClean">#d5feea</color>
+    <color name="green">#4CAF50</color>
     <color name="pinkClean">#fed4d5</color>
     <color name="yellowClean">#F6F0BC</color>
+
+
 </resources>

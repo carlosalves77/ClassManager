@@ -11,6 +11,7 @@
     <string name="close_icon">ic_close</string>
     <string name="imgNoticeBoard">imgNoticeBoard</string>
     <string name="NoticeBoard">Quadro de Notícias</string>
+    <string name="noticies">Noticías</string>
     <string name="HomeWork">Tarefas</string>
     <string name="web_client_id">1060966786377-33sel7pcvtpn42n5uulnnd0ppbss3jdp.apps.googleusercontent.com</string>
     <string name="signOut">Deslogar</string>
@@ -27,8 +28,6 @@
     <string name="ic_signOut">Deslogar</string>
     <string name="ic_privacy">Privacidade</string>
     <string name="ic_security">Segurança</string>
-
-
 
 
 </resources>

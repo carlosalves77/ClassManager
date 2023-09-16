@@ -1,8 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.ClassManager" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.ClassManager" parent="Theme.Material3.Dark.NoActionBar">
         <!-- Customize your dark theme here. -->
         <item name="colorPrimary">@color/blue</item>
+
 
     </style>
 
@@ -12,4 +13,10 @@
         <item name="colorPrimary">@color/black</item>
         <item name="android:textColorPrimary">@color/black</item>
     </style>
+
+    <style name="checkBoxStyle" parent="Base.Theme.AppCompat">
+        <item name="colorAccent">@color/black</item>
+        <item name="android:textColorPrimary">@color/purple</item>
+    </style>
+
 </resources>

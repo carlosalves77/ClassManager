@@ -23,7 +23,6 @@ class Menu : AppCompatActivity(), View.OnClickListener {
         auth = FirebaseAuth.getInstance()
 
         binding.icClose.setOnClickListener(this)
-        binding.sighOutBtn.setOnClickListener(this)
         binding.calendarBtn.setOnClickListener(this)
         binding.profileBtn.setOnClickListener(this)
 
@@ -46,12 +45,6 @@ class Menu : AppCompatActivity(), View.OnClickListener {
            R.id.ic_close -> {
                startActivity(Intent(this, Home::class.java ))
                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
-               finish()
-           }
-           R.id.sighOutBtn -> {
-              startActivity(Intent(this, SignIn::class.java ))
-               auth.signOut()
-               overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
                finish()
            }
            R.id.calendarBtn -> {

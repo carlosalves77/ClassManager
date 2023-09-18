@@ -54,8 +54,8 @@
                     android:contentDescription="@string/ic_security"
                     android:src="@drawable/ic_arrow"
                     android:layout_gravity="end"
-                    android:scaleX="1.5"
-                    android:scaleY="1.5"
+                    android:scaleX="1"
+                    android:scaleY="1"
                     />
 
             </LinearLayout>

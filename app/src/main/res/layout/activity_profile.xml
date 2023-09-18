@@ -103,21 +103,21 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="60dp"
             android:layout_marginBottom="20dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             tools:ignore="UselessParent">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:backgroundTint="@color/greenClean"
-                app:cardCornerRadius="30dp">
+                app:cardCornerRadius="25dp">
 
                 <ImageView
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
                     android:layout_gravity="center"
                     android:contentDescription="@string/ic_account"
                     android:scaleType="fitEnd"
@@ -154,21 +154,21 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="60dp"
             android:layout_marginBottom="20dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             tools:ignore="UselessParent">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:backgroundTint="@color/purple"
-                app:cardCornerRadius="30dp">
+                app:cardCornerRadius="25dp">
 
                 <ImageView
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
                     android:layout_gravity="center"
                     android:contentDescription="@string/ic_account"
                     android:scaleType="fitEnd"
@@ -205,21 +205,21 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="60dp"
             android:layout_marginBottom="20dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             tools:ignore="UselessParent">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:backgroundTint="@color/yellowClean"
-                app:cardCornerRadius="30dp">
+                app:cardCornerRadius="25dp">
 
                 <ImageView
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
                     android:layout_gravity="center"
                     android:contentDescription="@string/notification_icon"
                     android:scaleType="fitEnd"
@@ -256,21 +256,21 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="60dp"
             android:layout_marginBottom="20dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             tools:ignore="UselessParent">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:backgroundTint="@color/blueClean"
-                app:cardCornerRadius="30dp">
+                app:cardCornerRadius="25dp">
 
                 <ImageView
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
                     android:layout_gravity="center"
                     android:contentDescription="@string/ic_security"
                     android:scaleType="fitEnd"
@@ -308,20 +308,20 @@
         <LinearLayout
             android:id="@+id/SignOutBtn"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="60dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             tools:ignore="UselessParent">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:backgroundTint="@color/pinkClean"
-                app:cardCornerRadius="30dp">
+                app:cardCornerRadius="25dp">
 
                 <ImageView
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
                     android:layout_gravity="center"
                     android:contentDescription="@string/ic_account"
                     android:scaleType="fitEnd"

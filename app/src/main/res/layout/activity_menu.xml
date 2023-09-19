@@ -95,7 +95,7 @@
         android:gravity="center"
         android:orientation="vertical"
         android:clickable="true"
-        app:layout_constraintEnd_toStartOf="@+id/linearLayout6"
+        app:layout_constraintEnd_toStartOf="@+id/attendanceLayout"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/linearLayout3"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
@@ -231,7 +231,7 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/profileBtn"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
+        app:layout_constraintTop_toBottomOf="@+id/attendanceLayout">
 
 
         <androidx.cardview.widget.CardView
@@ -268,7 +268,7 @@
 
 
     <LinearLayout
-        android:id="@+id/linearLayout6"
+        android:id="@+id/attendanceLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="29dp"
@@ -293,7 +293,8 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
-                android:src="@drawable/notification_icon" />
+                android:src="@drawable/attendance"
+                android:contentDescription="@string/attendance_icon" />
 
 
         </androidx.cardview.widget.CardView>
@@ -304,7 +305,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/nunito_medium"
-            android:text="@string/notification_icon"
+            android:text="@string/attendance_icon"
             android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintTop_toBottomOf="@+id/calendarBtn"

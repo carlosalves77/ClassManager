@@ -25,6 +25,7 @@ class Menu : AppCompatActivity(), View.OnClickListener {
         binding.icClose.setOnClickListener(this)
         binding.calendarBtn.setOnClickListener(this)
         binding.profileBtn.setOnClickListener(this)
+        binding.attendanceLayout.setOnClickListener(this)
 
         getAccountInfo()
         handleBackButton()
@@ -54,6 +55,11 @@ class Menu : AppCompatActivity(), View.OnClickListener {
            }
            R.id.profileBtn -> {
                startActivity(Intent(this, Profile::class.java))
+               overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+               finish()
+           }
+           R.id.attendanceLayout -> {
+               startActivity(Intent(this, Attendance::class.java))
                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
                finish()
            }

@@ -6,7 +6,7 @@
     <string name="Day">01</string>
     <string name="Mouth">OUT</string>
     <string name="name_teacher">Ismael Rodrigues</string>
-    <string name="teacher">Professor</string>
+    <string name="teacher">Classe VII</string>
     <string name="ImageProfile">ImageProfile</string>
     <string name="close_icon">ic_close</string>
     <string name="imgNoticeBoard">imgNoticeBoard</string>
@@ -19,6 +19,7 @@
     <string name="class_icon">Turmas</string>
     <string name="support_icon">Suporte</string>
     <string name="notification_icon">Notificações</string>
+    <string name="attendance_icon">Presença</string>
     <string name="login_text">Login</string>
     <string name="password_text">Senha</string>
     <string name="forget_password_text">Esqueci a senha</string>
@@ -28,6 +29,8 @@
     <string name="ic_signOut">Deslogar</string>
     <string name="ic_privacy">Privacidade</string>
     <string name="ic_security">Segurança</string>
+    <string name="ic_arrow_right">arrow_right</string>
+    <string name="ic_arrow_down">arrow_down</string>
 
 
 </resources>

@@ -31,6 +31,7 @@
     <string name="ic_security">Segurança</string>
     <string name="ic_arrow_right">arrow_right</string>
     <string name="ic_arrow_down">arrow_down</string>
+    <string name="fee">Boletos</string>
 
 
 </resources>

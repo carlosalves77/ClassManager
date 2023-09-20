@@ -26,20 +26,12 @@ class Menu : AppCompatActivity(), View.OnClickListener {
         binding.calendarBtn.setOnClickListener(this)
         binding.profileBtn.setOnClickListener(this)
         binding.attendanceLayout.setOnClickListener(this)
+        binding.feeLayout.setOnClickListener(this)
 
         getAccountInfo()
         handleBackButton()
     }
 
-    private fun handleBackButton() {
-        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                startActivity(Intent(this@Menu, Home::class.java))
-                finish()
-                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
-            }
-        })
-    }
 
     override fun onClick(v: View?) {
        when (v!!.id) {
@@ -63,9 +55,25 @@ class Menu : AppCompatActivity(), View.OnClickListener {
                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
                finish()
            }
+           R.id.feeLayout -> {
+               startActivity(Intent(this, Fee::class.java))
+               overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+               finish()
+           }
        }
 
     }
+
+    private fun handleBackButton() {
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                startActivity(Intent(this@Menu, Home::class.java))
+                finish()
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+            }
+        })
+    }
+
 
     private fun getAccountInfo() {
 

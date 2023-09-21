@@ -27,6 +27,7 @@ class Menu : AppCompatActivity(), View.OnClickListener {
         binding.profileBtn.setOnClickListener(this)
         binding.attendanceLayout.setOnClickListener(this)
         binding.feeLayout.setOnClickListener(this)
+        binding.multidiaLayout.setOnClickListener(this)
 
         getAccountInfo()
         handleBackButton()
@@ -57,6 +58,11 @@ class Menu : AppCompatActivity(), View.OnClickListener {
            }
            R.id.feeLayout -> {
                startActivity(Intent(this, Fee::class.java))
+               overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+               finish()
+           }
+           R.id.multidiaLayout -> {
+               startActivity(Intent(this, Multimedia::class.java))
                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
                finish()
            }

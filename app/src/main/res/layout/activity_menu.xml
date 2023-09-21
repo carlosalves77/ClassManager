@@ -90,14 +90,14 @@
         android:id="@+id/calendarBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="29dp"
+        android:layout_marginStart="18dp"
         android:layout_marginTop="40dp"
         android:clickable="true"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintEnd_toStartOf="@+id/attendanceLayout"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout3"
+        app:layout_constraintStart_toEndOf="@+id/multidiaLayout"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
 
@@ -133,7 +133,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout3"
+        android:id="@+id/multidiaLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -153,10 +153,11 @@
             tools:layout_editor_absoluteY="154dp">
 
             <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:src="@drawable/class_icon" />
+                android:src="@drawable/multimidia"
+                android:contentDescription="@string/multimedia" />
 
 
         </androidx.cardview.widget.CardView>
@@ -167,7 +168,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/nunito_medium"
-            android:text="@string/class_icon"
+            android:text="@string/multimedia"
             android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintTop_toBottomOf="@+id/calendarBtn"
@@ -185,9 +186,8 @@
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintEnd_toStartOf="@+id/feeLayout"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+        app:layout_constraintTop_toBottomOf="@+id/multidiaLayout">
 
 
         <androidx.cardview.widget.CardView
@@ -226,7 +226,7 @@
         android:id="@+id/feeLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="18dp"
         android:layout_marginTop="40dp"
         android:gravity="center"
         android:orientation="vertical"
@@ -273,12 +273,11 @@
         android:id="@+id/linearLayout5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="37dp"
+        android:layout_marginStart="19dp"
         android:layout_marginTop="40dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/feeLayout"
         app:layout_constraintTop_toBottomOf="@+id/attendanceLayout">
 
@@ -319,7 +318,8 @@
         android:id="@+id/attendanceLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="29dp"
+
+        android:layout_marginStart="19dp"
         android:layout_marginTop="40dp"
         android:gravity="center"
         android:orientation="vertical"

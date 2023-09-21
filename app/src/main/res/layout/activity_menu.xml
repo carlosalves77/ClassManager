@@ -113,7 +113,8 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
-                android:src="@drawable/calendar_icon" />
+                android:src="@drawable/calendar_icon"
+                android:contentDescription="@string/calendar" />
 
 
         </androidx.cardview.widget.CardView>
@@ -202,7 +203,8 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
-                android:src="@drawable/profile_icon" />
+                android:src="@drawable/profile_icon"
+                android:contentDescription="@string/profile" />
 
 
         </androidx.cardview.widget.CardView>
@@ -230,7 +232,7 @@
         android:layout_marginTop="40dp"
         android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintEnd_toStartOf="@+id/linearLayout5"
+        app:layout_constraintEnd_toStartOf="@+id/reportClassLayout"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/profileBtn"
         app:layout_constraintTop_toBottomOf="@+id/calendarBtn">
@@ -270,7 +272,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout5"
+        android:id="@+id/reportClassLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="19dp"
@@ -291,10 +293,11 @@
             tools:layout_editor_absoluteY="154dp">
 
             <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:src="@drawable/suporte_icon" />
+                android:src="@drawable/report_class"
+                android:contentDescription="@string/report_class" />
 
 
         </androidx.cardview.widget.CardView>
@@ -305,7 +308,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/nunito_medium"
-            android:text="@string/support_icon"
+            android:text="@string/report_class"
             android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintTop_toBottomOf="@+id/calendarBtn"

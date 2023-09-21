@@ -28,6 +28,7 @@ class Menu : AppCompatActivity(), View.OnClickListener {
         binding.attendanceLayout.setOnClickListener(this)
         binding.feeLayout.setOnClickListener(this)
         binding.multidiaLayout.setOnClickListener(this)
+        binding.reportClassLayout.setOnClickListener(this)
 
         getAccountInfo()
         handleBackButton()
@@ -63,6 +64,11 @@ class Menu : AppCompatActivity(), View.OnClickListener {
            }
            R.id.multidiaLayout -> {
                startActivity(Intent(this, Multimedia::class.java))
+               overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+               finish()
+           }
+           R.id.reportClassLayout -> {
+               startActivity(Intent(this, ReportClass::class.java))
                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
                finish()
            }

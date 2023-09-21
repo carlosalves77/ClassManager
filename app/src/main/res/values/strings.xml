@@ -18,6 +18,7 @@
     <string name="profile">Perfil</string>
     <string name="class_icon">Turmas</string>
     <string name="support_icon">Suporte</string>
+    <string name="report_class">Relatório</string>
     <string name="notification_icon">Notificações</string>
     <string name="attendance_icon">Presença</string>
     <string name="login_text">Login</string>
@@ -33,6 +34,8 @@
     <string name="ic_arrow_down">arrow_down</string>
     <string name="fee">Boletos</string>
     <string name="multimedia">Multimedia</string>
+    <string name="school">school</string>
+
 
 
 </resources>

@@ -22,9 +22,8 @@ class ReportClass : AppCompatActivity(), View.OnClickListener {
 
         binding.reportClassbackBtn.setOnClickListener(this)
         binding.firstClassOnClick.setOnClickListener(this)
+        binding.secondClassOnClick.setOnClickListener(this)
         handleBackButton()
-
-
 
 
     }
@@ -41,7 +40,10 @@ class ReportClass : AppCompatActivity(), View.OnClickListener {
                 startActivity(Intent(this, ReportCard::class.java))
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
             }
-
+            R.id.secondClassOnClick -> {
+                startActivity(Intent(this, ReportCard::class.java))
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+            }
         }
     }
 

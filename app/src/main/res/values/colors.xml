@@ -5,6 +5,8 @@
     <color name="blue">#463f96</color>
     <color name="purple">#fd3667</color>
     <color name="gray">#86888A</color>
+    <color name="grayClean">#e8ebed</color>
+    <color name="subGrayClean">#f4f4f7</color>
     <color name="transparent">#BDC1C5</color>
     <color name="blueClean">#d5f4ff</color>
     <color name="greenClean">#d5feea</color>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "993979345447",
+    "project_id": "classmanagersignin-92801",
+    "storage_bucket": "classmanagersignin-92801.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:993979345447:android:eb0d73b5443c5f8bde3c02",
+        "android_client_info": {
+          "package_name": "com.carlos.classmanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "993979345447-ecn129lui411vdcf9u8fopekludmbhr0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.carlos.classmanager",
+            "certificate_hash": "d20f606a58bc1b24a3b52f2cec45161a8fd720ed"
+          }
+        },
+        {
+          "client_id": "993979345447-m0kmssh66bb7lh7h91jjm9uo03mrsqvm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCb8OJe0U-dEKtAW-8JNeDg3cUObs77RHo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "993979345447-m0kmssh66bb7lh7h91jjm9uo03mrsqvm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

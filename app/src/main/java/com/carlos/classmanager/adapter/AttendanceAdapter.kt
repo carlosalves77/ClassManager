@@ -17,10 +17,13 @@ class AttendanceAdapter(private var mAttendance: List<Attendance>) : RecyclerVie
     }
 
     override fun onBindViewHolder(holder: AttendanceAdapter.AttendanceViewHolder, position: Int) {
-        holder.binding.presentsDays.text = mAttendance[position].present
-        holder.binding.absentsDays.text = mAttendance[position].absent
-        holder.binding.leavesDays.text = mAttendance[position].leave
-        holder.binding.mouthText.text = mAttendance[position].mouth
+        holder.binding.apply {
+            presentsDays.text = mAttendance[position].present
+            absentsDays.text = mAttendance[position].absent
+            leavesDays.text = mAttendance[position].leave
+            mouthText.text = mAttendance[position].mouth
+        }
+
 
     }
 

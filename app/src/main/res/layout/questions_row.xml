@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="15dp"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/questionNumberTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_bold"
+        android:text="1º Questão (1 alternativa)"
+        android:textColor="@color/blue"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         android:layout_marginTop="15dp"
+        app:cardCornerRadius="13dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp"
+            android:background="@color/gray">
+
+            <TextView
+                android:id="@+id/textQuestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito_medium"
+                android:text=" Qual é o planeta mais próximo do Sol no nosso sistema solar? Este planeta é conhecido por suas temperaturas extremamente altas durante o dia e extremamente baixas durante a noite, devido à falta de uma atmosfera significativa. Qual é o nome desse planeta?"
+                />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:id="@+id/questionOneTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vênus"
+            android:paddingStart="@dimen/padding_checkbox"
+            android:button="@drawable/ic_circle_outline"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:fontFamily="@font/nunito_medium"
+            tools:ignore="RtlSymmetry" />
+
+        <CheckBox
+            android:id="@+id/questionTwoTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Terra"
+            android:paddingStart="@dimen/padding_checkbox"
+            android:button="@drawable/ic_circle_outline"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:fontFamily="@font/nunito_medium"
+            tools:ignore="RtlSymmetry" />
+
+        <CheckBox
+            android:id="@+id/questionThirdTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Marte"
+            android:paddingStart="@dimen/padding_checkbox"
+            android:button="@drawable/ic_circle_outline"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:fontFamily="@font/nunito_medium"
+            tools:ignore="RtlSymmetry" />
+
+        <CheckBox
+            android:id="@+id/questionFourthTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mercúrio"
+            android:paddingStart="@dimen/padding_checkbox"
+            android:button="@drawable/ic_circle_outline"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:fontFamily="@font/nunito_medium"
+            tools:ignore="RtlSymmetry" />
+
+        <CheckBox
+            android:id="@+id/questionFifthTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Júpiter"
+            android:paddingStart="@dimen/padding_checkbox"
+            android:button="@drawable/ic_circle_outline"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:fontFamily="@font/nunito_medium"
+            tools:ignore="RtlSymmetry" />
+
+
+
+
+    </RadioGroup>
+
+</LinearLayout>

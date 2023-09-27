@@ -10,12 +10,14 @@ import com.carlos.classmanager.R
 import com.carlos.classmanager.adapter.ExaminationAdapter
 import com.carlos.classmanager.databinding.ActivityExaminationBinding
 import com.carlos.classmanager.model.Examination
+import com.carlos.classmanager.utils.firstList
+import com.carlos.classmanager.utils.secondList
+import com.carlos.classmanager.utils.thirdList
 
 
 class Examination : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var binding: ActivityExaminationBinding
-
     private var mExamination = ArrayList<Examination>()
 
     private lateinit var adapterExamination: ExaminationAdapter
@@ -62,22 +64,13 @@ class Examination : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun addExaminationList() {
-        mExamination.add(Examination(
-            "Sistema Solar Explorado",
-            "1º Questão (1 alternativa)",
-            "Qual é o planeta mais próximo do Sol no nosso sistema solar? Este planeta é conhecido por suas temperaturas extremamente altas durante o dia e extremamente baixas durante a noite, devido à falta de uma atmosfera significativa. Qual é o nome desse planeta?",
-            "Vênus",
-            "Terra",
-            "Mercúrio",
-            "Júpiter"
-
-        ))
-        mExamination.add(Examination("Revolução Industrial Impacto"))
-        mExamination.add(Examination("Guerra Civil Americana"))
-        mExamination.add(Examination("Geometria em Ação"))
-        mExamination.add(Examination("Evolução das Espécies"))
-        mExamination.add(Examination("Literatura Clássica Analisada"))
-        mExamination.add(Examination("Meio Ambiente Preservado"))
-        mExamination.add(Examination("Arte Moderna Expressiva"))
+        mExamination.add(Examination("Sistema Solar Explorado", 1, firstList))
+        mExamination.add(Examination("Revolução Industrial Impacto", 2,secondList))
+        mExamination.add(Examination("Guerra Civil Americana", 3, thirdList))
+//        mExamination.add(Examination("Geometria em Ação"))
+//        mExamination.add(Examination("Evolução das Espécies"))
+//        mExamination.add(Examination("Literatura Clássica Analisada"))
+//        mExamination.add(Examination("Meio Ambiente Preservado"))
+//        mExamination.add(Examination("Arte Moderna Expressiva"))
     }
 }

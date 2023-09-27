@@ -13,11 +13,12 @@ import com.carlos.classmanager.databinding.ExaminationRowBinding
 import com.carlos.classmanager.databinding.QuestionsRowBinding
 import com.carlos.classmanager.model.Attendance
 import com.carlos.classmanager.model.Examination
+import com.carlos.classmanager.model.Questions
 import com.carlos.classmanager.ui.ExaminationTeste
 import com.carlos.classmanager.ui.Noticies
 
 
-class ExaminationListTestAdapter(private var mExaminationTestList: List<Examination>) :
+class ExaminationListTestAdapter(private var mQuestions: List<Questions>) :
     RecyclerView.Adapter<ExaminationListTestAdapter.ExaminationListTestViewHolder>() {
 
     inner class ExaminationListTestViewHolder(val binding: QuestionsRowBinding) :
@@ -35,15 +36,15 @@ class ExaminationListTestAdapter(private var mExaminationTestList: List<Examinat
 
     override fun onBindViewHolder(holder: ExaminationListTestAdapter.ExaminationListTestViewHolder, position: Int) {
         holder.binding.apply {
-            textQuestion.text = mExaminationTestList[position].description
-            questionNumberTxt.text = mExaminationTestList[position].questionNumber
-            questionOneTxt.text = mExaminationTestList[position].questionNumber
-            questionTwoTxt.text = mExaminationTestList[position].secondQuestion
-            questionThirdTxt.text = mExaminationTestList[position].thirdQuestion
-            questionFourthTxt.text = mExaminationTestList[position].fourthQuestion
-            questionFifthTxt.text = mExaminationTestList[position].fifthQuestion
+            questionNumberTxt.text = mQuestions[position].questionNumber
+            textQuestion.text = mQuestions[position].questionText
+            questionOneTxt.text = mQuestions[position].firstQuestion
+            questionTwoTxt.text = mQuestions[position].secondQuestion
+            questionThirdTxt.text = mQuestions[position].thirdQuestion
+            questionFourthTxt.text = mQuestions[position].fourthQuestion
+            questionFifthTxt.text = mQuestions[position].fifthQuestion
         }
     }
 
-    override fun getItemCount() = mExaminationTestList.size
+    override fun getItemCount() = mQuestions.size
 }

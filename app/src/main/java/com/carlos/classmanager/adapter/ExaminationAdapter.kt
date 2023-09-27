@@ -37,26 +37,30 @@ class ExaminationAdapter(private var mExamination: List<Examination>) :
             titleNameTxt.text = mExamination[position].description
             when (position) {
                 1 -> {
-                    completedLayout.isVisible = false
-                    startButton.isVisible = true
+                    completedLayout.isVisible = true
+                    startButton.isVisible = false
+                    cardExamination.isEnabled = false
                 }
 
                 3 -> {
-                    completedLayout.isVisible = false
-                    startButton.isVisible = true
+                    completedLayout.isVisible = true
+                    startButton.isVisible = false
+                    cardExamination.isEnabled = false
                 }
                 5 -> {
                     completedLayout.isVisible = false
                     startButton.isVisible = true
+                    cardExamination.isEnabled = false
                 }
                 else -> {
-                    completedLayout.isVisible = true
-                    startButton.isVisible = false
+                    completedLayout.isVisible = false
+                    startButton.isVisible = true
                 }
 
             }
             cardExamination.setOnClickListener {
                 val intent = Intent(holder.itemView.context, ExaminationTeste::class.java)
+                intent.putExtra("id", mExamination[position].id)
                 intent.putExtra("examinationTestTxt", holder.binding.titleNameTxt.text)
                 holder.itemView.context.startActivity(intent)
                 val context = holder.itemView.context as Activity

@@ -48,8 +48,8 @@ class ExaminationAdapter(private var mExamination: List<Examination>) :
                     cardExamination.isEnabled = false
                 }
                 5 -> {
-                    completedLayout.isVisible = false
-                    startButton.isVisible = true
+                    completedLayout.isVisible = true
+                    startButton.isVisible = false
                     cardExamination.isEnabled = false
                 }
                 else -> {

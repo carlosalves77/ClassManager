@@ -7,13 +7,10 @@ import android.view.View
 import androidx.activity.OnBackPressedCallback
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.carlos.classmanager.R
-import com.carlos.classmanager.adapter.ExaminationAdapter
 import com.carlos.classmanager.adapter.ExaminationListTestAdapter
 import com.carlos.classmanager.databinding.ActivityExaminationTesteBinding
 import com.carlos.classmanager.model.Questions
-import com.carlos.classmanager.utils.firstList
-import com.carlos.classmanager.utils.secondList
-import com.carlos.classmanager.utils.thirdList
+import com.carlos.classmanager.utils.ListOfQuestions
 
 class ExaminationTeste : AppCompatActivity(), View.OnClickListener {
 
@@ -67,25 +64,22 @@ class ExaminationTeste : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun addQuestionsList() {
-        when (intent?.getIntExtra("id", 0)) {
-            1 -> {
-                for (item in firstList) {
-                    mQuestions.add(item)
-                }
-            }
+        val listOfQuestions = ListOfQuestions()
 
-            2 -> {
-                for (item in secondList) {
-                    mQuestions.add(item)
-                }
-            }
+        val selectedList = when (intent?.getIntExtra("id", 0)) {
+            1 -> listOfQuestions.firstList
+            2 -> listOfQuestions.secondList
+            3 -> listOfQuestions.thirdList
+            4 -> listOfQuestions.fourthList
+            5 -> listOfQuestions.fifthList
+            6 -> listOfQuestions.sixthList
+            7 -> listOfQuestions.seventhList
+            8 -> listOfQuestions.eighthList
 
-            3 -> {
-                for (item in thirdList) {
-                    mQuestions.add(item)
-                }
-            }
+            else -> emptyList()
         }
+
+        mQuestions.addAll(selectedList)
 
     }
 

@@ -100,34 +100,48 @@ class Home : AppCompatActivity(), View.OnClickListener {
         mNotices.add(
             Notices(
                 "Dia das Profissões",
-                R.drawable.logo,
+                "https://i.ytimg.com/vi/wdB5mYdayl0/maxresdefault.jpg",
                 "07 outubro 2023",
-                "Este evento convida profissionais de diversas áreas, como médicos, engenheiros, advogados, artistas e outros, para compartilhar suas experiências de carreira com os alunos. Os alunos têm a oportunidade de fazer perguntas, aprender sobre diferentes profissões e explorar possíveis caminhos para o futuro.",
+                "O \"Dia das Profissões\" é um evento ou atividade que visa proporcionar aos estudantes a oportunidade de aprender sobre várias profissões, explorar diferentes carreiras e obter informações valiosas sobre escolhas de carreira futura. Esse dia geralmente ocorre em escolas, universidades ou eventos educacionais e pode incluir uma variedade de atividades, como palestras, workshops, feiras de carreiras, visitas a empresas e painéis de discussão.\n" +
+                        "\n" +
+                        "O objetivo principal do Dia das Profissões é ajudar os estudantes a tomar decisões informadas sobre seus futuros acadêmicos e profissionais, permitindo que eles conheçam de perto profissionais de diferentes áreas e entendam melhor as demandas, responsabilidades e oportunidades de diversas profissões. Isso pode ser especialmente valioso para estudantes do ensino médio que estão prestes a ingressar na faculdade ou escolher uma carreira.\n" +
+                        "\n" +
+                        "Em resumo, o Dia das Profissões é uma iniciativa educacional que visa orientar os estudantes em suas escolhas de carreira, oferecendo informações e experiências práticas relacionadas a várias profissões.",
                 "https://i.ytimg.com/vi/wdB5mYdayl0/maxresdefault.jpg"
             )
         )
         mNotices.add(
             Notices(
                 "Feira de Ciências",
-                R.drawable.logo,
+                "https://i.pinimg.com/originals/e3/d3/89/e3d38938fa83e153323b7faabda8fe16.jpg",
                 "14 outubro 2023",
-                "A Feira de Ciências é uma oportunidade para os alunos mostrarem seus projetos científicos. Eles podem conduzir experimentos, criar modelos e apresentar suas descobertas para colegas, professores e até mesmo para pais e responsáveis. Competições podem ser organizadas para reconhecer o trabalho excepcional.",
+                "Uma Feira de Ciências é um evento educacional que reúne estudantes, professores e, às vezes, até mesmo membros da comunidade para apresentar projetos e experimentos relacionados a diversas áreas da ciência. Esses eventos têm como objetivo principal promover o aprendizado prático da ciência, estimular o interesse por disciplinas científicas e incentivar a criatividade e a pesquisa.\n" +
+                        "\n" +
+                        "Em uma Feira de Ciências, os participantes geralmente criam projetos que incluem hipóteses, experimentos, coleta de dados e análise dos resultados. Eles apresentam seus projetos em estandes ou exposições, onde podem compartilhar seus conhecimentos com os visitantes e, muitas vezes, são avaliados por um painel de jurados. As feiras de ciências são uma oportunidade para os estudantes desenvolverem habilidades de comunicação, aprenderem a metodologia científica e se envolverem ativamente na exploração do mundo ao seu redor.\n" +
+                        "\n" +
+                        "Esses eventos são uma parte importante da educação científica e promovem a curiosidade e o pensamento crítico entre os participantes, ajudando a criar uma base sólida para futuros estudos e carreiras nas áreas de ciência, tecnologia, engenharia e matemática",
                 "https://i.pinimg.com/originals/e3/d3/89/e3d38938fa83e153323b7faabda8fe16.jpg"
             )
         )
         mNotices.add(
             Notices(
                 "Festival de Outono",
-                R.drawable.logo,
                 "02 outubro 2023",
+                "O Festival de Outono é uma celebração sazonal que ocorre em muitas culturas ao redor do mundo durante a estação do outono. É uma festividade que marca a colheita, expressa a gratidão pela abundância de alimentos e comemora a transição do calor do verão para o frio do inverno.\n" +
+                        "\n" +
+                        "Neste festival, as pessoas se envolvem em atividades tradicionais que variam de cultura para cultura. Isso pode incluir a preparação de pratos sazonais, a realização de festas comunitárias, desfiles e decoração de espaços com temas outonais, como abóboras, folhas secas e outros elementos naturais típicos da estação.\n" +
+                        "\n" +
+                        "Uma característica comum em muitos festivais de outono é a ênfase na gratidão. As pessoas expressam sua apreciação pelas colheitas bem-sucedidas, pela comida que têm à mesa e pelas bênçãos que receberam durante o ano. Isso é frequentemente feito por meio de orações, rituais ou banquetes compartilhados com familiares e amigos.",
                 "Um evento temático de outono que celebra a estação. Pode incluir atividades como colheita de abóboras, pintura facial, concurso de esculturas de abóboras, venda de produtos típicos da estação e jogos ao ar livre, como corridas de saco e corridas de ovos.",
                 "https://3.bp.blogspot.com/-W-kAvLRS8oQ/T4mK_UhyOkI/AAAAAAAAAUw/9sivXFd7nZA/s1600/DSCF3192.JPG"
             )
         )
+        //TODO = Refactor description
+
         mNotices.add(
             Notices(
                 "Semana da Saúde",
-                R.drawable.logo,
+                "https://www.ergocorp.com.br/uploads/images/bra_noticias/arte-post-800x445.jpg",
                 "10/14 outubro 2023",
                 "Durante essa semana, a escola foca na promoção da saúde física e mental dos alunos. Isso pode incluir palestras sobre nutrição, exercícios, gerenciamento do estresse, além de atividades físicas como aulas de yoga ou caminhadas.",
                 "https://www.ergocorp.com.br/uploads/images/bra_noticias/arte-post-800x445.jpg"
@@ -136,7 +150,7 @@ class Home : AppCompatActivity(), View.OnClickListener {
         mNotices.add(
             Notices(
                 "Noite das Artes",
-                R.drawable.logo,
+                "https://static.todamateria.com.br/upload/no/it/noiteestreladasobrerodano-cke.jpg?auto_optimize=low",
                 "21 outubro 2023",
                 "Um evento que destaca o talento artístico dos alunos. Pode incluir apresentações de peças de teatro, concertos musicais, exibições de dança e galerias de arte com trabalhos dos estudantes.",
                 "https://static.todamateria.com.br/upload/no/it/noiteestreladasobrerodano-cke.jpg?auto_optimize=low"
@@ -145,25 +159,25 @@ class Home : AppCompatActivity(), View.OnClickListener {
         mNotices.add(
             Notices(
                 "Semana da Leitura",
-                R.drawable.logo,
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR7ZxvrBqCsDbARPoPyMR0d0QlEKvFhBMY-g&usqp=CAU",
                 "17/21 outubro 2023",
                 "Uma semana dedicada à promoção da leitura e da literacia. Os alunos podem participar de sessões de contos, clubes de leitura, concursos de redação e até mesmo troca de livros.",
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR7ZxvrBqCsDbARPoPyMR0d0QlEKvFhBMY-g&usqp=CAU"
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR7ZxvrBqCsDbARPoPyMR0d0QlEKvFhBMY-g&usqp=CAU",
             )
         )
         mNotices.add(
             Notices(
                 "Dia da História",
-                R.drawable.logo,
+                "https://i0.wp.com/eumilitar.blog/wp-content/uploads/2020/09/D-PEDRO.jpg?fit=1200%2C1200&ssl=1",
                 "27 outubro 2023",
                 "Um dia dedicado à exploração da história local, nacional ou global. Isso pode envolver palestras de historiadores, visitas a museus locais, apresentações de projetos de pesquisa dos alunos e até mesmo atividades de reencenação histórica.",
-              "https://scontent.frec24-1.fna.fbcdn.net/v/t39.30808-6/360083055_799383858508904_1027747630006410263_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=52f669&_nc_eui2=AeGgL8iWN2IGb-Qu_UB6lyw9Yxtc5_kKRV9jG1zn-QpFX6PQki182Cdu4DZ5qtRYqjN-wZNX5vMgVcar1Fun1-Wq&_nc_ohc=N2RBfDaHnMQAX9_6Dit&_nc_ht=scontent.frec24-1.fna&oh=00_AfD6gUgK-Yhbv66-06n99fzmyFlWWSkQXoVgAbicCbjgCA&oe=650BB001"
-            )
+                "https://i0.wp.com/eumilitar.blog/wp-content/uploads/2020/09/D-PEDRO.jpg?fit=1200%2C1200&ssl=1"
+                )
         )
         mNotices.add(
             Notices(
                 "Feira de Carreiras",
-                R.drawable.logo,
+                "https://maraba.pa.gov.br/wp-content/uploads/2022/09/2022-08-31-FEIRA-DAS-PROFISSOES-FOTO-P-4.jpeg",
                 "26 outubro 2023",
                 "Este evento é voltado para alunos mais velhos que estão começando a pensar sobre seus futuros acadêmicos e profissionais. Faculdades e empresas locais montam estandes para apresentar suas ofertas e responder às perguntas dos alunos sobre oportunidades educacionais e de carreira.",
                 "https://maraba.pa.gov.br/wp-content/uploads/2022/09/2022-08-31-FEIRA-DAS-PROFISSOES-FOTO-P-4.jpeg"
@@ -173,7 +187,7 @@ class Home : AppCompatActivity(), View.OnClickListener {
         mNotices.add(
             Notices(
                 "Festival Internacional",
-                R.drawable.logo,
+                "https://m.media-amazon.com/images/I/61jilk29tZL._AC_UF894,1000_QL80_.jpg",
                 "28 outubro 2023",
                 " Um evento que celebra a diversidade cultural da escola. Pode incluir estandes de comida com pratos típicos de diferentes países, apresentações de dança e música tradicional, exposições culturais e palestras sobre a importância da diversidade e inclusão.",
               "https://m.media-amazon.com/images/I/61jilk29tZL._AC_UF894,1000_QL80_.jpg"
@@ -182,7 +196,7 @@ class Home : AppCompatActivity(), View.OnClickListener {
         mNotices.add(
             Notices(
                 "Dia da Família",
-                R.drawable.logo,
+                "https://www.cmac.es.gov.br/uploads/filemanager/noticias/Dia%20Interancional%20da%20Fam%C3%ADlia.png",
                 "30 outubro 2023",
                 "Um dia para envolver os pais e responsáveis na vida escolar de seus filhos. Pode incluir oficinas interativas, jogos em equipe que promovam a colaboração entre pais e filhos, além de sessões informativas sobre a educação dos filhos e recursos disponíveis na escola.",
                "https://www.cmac.es.gov.br/uploads/filemanager/noticias/Dia%20Interancional%20da%20Fam%C3%ADlia.png"

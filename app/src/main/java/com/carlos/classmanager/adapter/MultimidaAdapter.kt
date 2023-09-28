@@ -1,20 +1,25 @@
 package com.carlos.classmanager.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.webkit.WebView
+import android.widget.MediaController
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
-import com.carlos.classmanager.databinding.CalendarRowBinding
-import com.carlos.classmanager.model.Calendar
+import com.carlos.classmanager.databinding.MultimediaRowBinding
+import com.carlos.classmanager.model.Multimedia
 
-class MultimidaAdapter(private var mCalendar: List<Calendar>) :
-    RecyclerView.Adapter<MultimidaAdapter.CalendarViewHolder>() {
 
-    inner class CalendarViewHolder(val binding: CalendarRowBinding) :
+class MultimediaAdapter(private var mMultimedia: List<Multimedia>) :
+    RecyclerView.Adapter<MultimediaAdapter.MultimediaViewHolder>() {
+
+    inner class MultimediaViewHolder(val binding: MultimediaRowBinding) :
         RecyclerView.ViewHolder(binding.root)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CalendarViewHolder {
-        return CalendarViewHolder(
-            CalendarRowBinding.inflate(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MultimediaViewHolder {
+        return MultimediaViewHolder(
+            MultimediaRowBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -22,15 +27,30 @@ class MultimidaAdapter(private var mCalendar: List<Calendar>) :
         )
     }
 
-    override fun onBindViewHolder(holder: MultimidaAdapter.CalendarViewHolder, position: Int) {
+    @SuppressLint("SetJavaScriptEnabled")
+    override fun onBindViewHolder(holder: MultimediaAdapter.MultimediaViewHolder, position: Int) {
         holder.binding.apply {
-            dayText.text = mCalendar[position].day
-            mouthText.text = mCalendar[position].mouth
-            eventName.text = mCalendar[position].eventName
-            eventType.text = mCalendar[position].eventType
+            when (position) {
+                0 -> {
+                    typeFileText.text = mMultimedia[position].typeFileText
+                }
+                1 -> {
+                    fileContainerLayout.isVisible = false
+                    fileWebViewContainerLayout.isVisible = true
+                    titleFileNameWebView.text = mMultimedia[position].titleWebViewText
+                    videoView.setVideoPath("https://www.youtube.com/watch?v=Z4hknCDVBfU")
+
+
+
+                }
+                2 -> {
+                    typeFileText.text = mMultimedia[position].typeFileText
+                }
+            }
         }
+
 
     }
 
-    override fun getItemCount() = mCalendar.size
+    override fun getItemCount() = mMultimedia.size
 }

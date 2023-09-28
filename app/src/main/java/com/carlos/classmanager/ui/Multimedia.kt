@@ -5,12 +5,18 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.activity.OnBackPressedCallback
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.carlos.classmanager.R
+import com.carlos.classmanager.adapter.MultimediaAdapter
 import com.carlos.classmanager.databinding.ActivityMultimediaBinding
+import com.carlos.classmanager.model.Multimedia
+import com.carlos.classmanager.utils.ListOfMultimedia
 
 class Multimedia : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var binding: ActivityMultimediaBinding
+    private lateinit var multimediaAdapter: MultimediaAdapter
+    private var mMultimedia = ArrayList<Multimedia>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMultimediaBinding.inflate(layoutInflater)
@@ -19,15 +25,16 @@ class Multimedia : AppCompatActivity(), View.OnClickListener {
         binding.multimidiaBackBtn.setOnClickListener(this)
 
         handleBackButton()
+        setMultimediaRv()
     }
 
     override fun onClick(v: View?) {
-        when(v!!.id) {
-          R.id.multimidiaBackBtn -> {
-              startActivity(Intent(this, Home::class.java))
-              overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
-              finish()
-          }
+        when (v!!.id) {
+            R.id.multimidiaBackBtn -> {
+                startActivity(Intent(this, Home::class.java))
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+                finish()
+            }
         }
     }
 
@@ -40,4 +47,26 @@ class Multimedia : AppCompatActivity(), View.OnClickListener {
             }
         })
     }
+
+    private fun setMultimediaRv() {
+        val recyclerViewMultimedia = binding.multimidiaRv
+        recyclerViewMultimedia.setHasFixedSize(true)
+        recyclerViewMultimedia.layoutManager = LinearLayoutManager(this)
+
+        multimediaAdapter = MultimediaAdapter(mMultimedia)
+        recyclerViewMultimedia.adapter = multimediaAdapter
+
+        addMultimediaList()
+    }
+
+    private fun addMultimediaList() {
+
+        val listOfMultimedia = ListOfMultimedia()
+
+        mMultimedia.addAll(listOfMultimedia.listMultimediaOne)
+
+
+    }
+
+
 }

@@ -3,9 +3,11 @@ package com.carlos.classmanager.adapter
 
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.carlos.classmanager.R
 import com.carlos.classmanager.databinding.NoticeboardRowBinding
 import com.carlos.classmanager.model.Notices
@@ -22,20 +24,23 @@ class NoticeAdapter(private var mNotices: List<Notices>) : RecyclerView.Adapter<
 
     override fun onBindViewHolder(holder: NoticeViewHolder, position: Int) {
         val currentNotice = mNotices[position]
-        holder.binding.imgNoticeBoard.setImageResource(mNotices[position].logo)
-        holder.binding.noticeTxt.text = mNotices[position].title
-        holder.binding.dateTxt.text = mNotices[position].date
-        holder.binding.navNoticiesBtn.setOnClickListener {
-             val intent = Intent(holder.itemView.context, Noticies::class.java)
-             intent.putExtra("title", currentNotice.title)
-             intent.putExtra("date", currentNotice.date)
-             intent.putExtra("description", currentNotice.description)
-             intent.putExtra("noticePicture", currentNotice.noticePicture)
-             holder.itemView.context.startActivity(intent)
+        holder.binding.apply {
+            Glide.with(holder.itemView.context).load(mNotices[position].logo).into(imgNoticeBoard)
+           noticeTxt.text = mNotices[position].title
+           dateTxt.text = mNotices[position].date
+           navNoticiesBtn.setOnClickListener {
+                val intent = Intent(holder.itemView.context, Noticies::class.java)
+                intent.putExtra("title", currentNotice.title)
+                intent.putExtra("date", currentNotice.date)
+                intent.putExtra("description", currentNotice.description)
+                intent.putExtra("noticePicture", currentNotice.noticePicture)
+                holder.itemView.context.startActivity(intent)
 
-            val context = holder.itemView.context as Activity
-            context.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+                val context = holder.itemView.context as Activity
+                context.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+            }
         }
+
     }
 
     override fun getItemCount() = mNotices.size

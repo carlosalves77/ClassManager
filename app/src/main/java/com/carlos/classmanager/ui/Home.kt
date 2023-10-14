@@ -99,7 +99,7 @@ class Home : AppCompatActivity(), View.OnClickListener {
 
 
     private fun addNoticeList() {
-      val listOfNotices = ListOfNotices()
+        val listOfNotices = ListOfNotices()
         mNotices.addAll(listOfNotices.listOfNotices)
     }
 

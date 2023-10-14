@@ -15,9 +15,8 @@
         <item name="android:textColorPrimary">@color/black</item>
     </style>
 
-    <style name="HomeWorkCustom" parent="Theme.AppCompat">
-        <item name="colorAccent">@color/purple</item>
-        <item name="colorPrimary">@color/black</item>
-        <item name="android:textColorPrimary">@color/black</item>
+    <style name="HomeWorkCustom" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/green</item>
+
     </style>
 </resources>

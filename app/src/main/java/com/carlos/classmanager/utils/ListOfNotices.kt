@@ -117,7 +117,7 @@ class ListOfNotices {
 
         Notices(
             "Feira de Carreiras",
-            "https://www.iesb.br/content/uploads/2021/04/WhatsApp-Image-2018-09-21-at-14-26-28-3.jpeg",
+            "https://www.jornaldocomercio.com/_midias/jpg/2016/05/06/feira_de_carreiras_da_pucrs_foto_bruno_todeschini_ascom_pucrs-487941.jpg",
             "26 outubro 2023",
             "A Feira de Carreiras é um evento crucial para estudantes, profissionais em busca de novas oportunidades e empresas que buscam talentos. Ela oferece um ambiente propício para conectar candidatos a empregos e estágios com empregadores em potencial, além de proporcionar oportunidades de desenvolvimento de carreira e networking. Aqui estão alguns aspectos importantes sobre a Feira de Carreiras:\n" +
                     "\n" +
@@ -138,7 +138,7 @@ class ListOfNotices {
                     "Desenvolvimento de Habilidades: Além de oportunidades de emprego, as feiras também podem oferecer oficinas e recursos para o desenvolvimento de habilidades profissionais, como entrevistas, elaboração de currículos e construção de marca pessoal.\n" +
                     "\n" +
                     "As Feiras de Carreiras são vitais tanto para indivíduos em busca de emprego quanto para empresas que buscam talentos. Elas ajudam a facilitar o casamento entre as habilidades e interesses dos candidatos e as necessidades das organizações, impulsionando o crescimento profissional e o sucesso empresarial.",
-            "https://www.iesb.br/content/uploads/2021/04/WhatsApp-Image-2018-09-21-at-14-26-28-3.jpeg"
+            "https://www.jornaldocomercio.com/_midias/jpg/2016/05/06/feira_de_carreiras_da_pucrs_foto_bruno_todeschini_ascom_pucrs-487941.jpg"
         ),
 
         Notices(

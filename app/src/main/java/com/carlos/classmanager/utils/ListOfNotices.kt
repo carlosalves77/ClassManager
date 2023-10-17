@@ -30,14 +30,14 @@ class ListOfNotices {
         Notices(
             "Festival de Outono",
             "https://www.visiteosusa.com.br/sites/default/files/styles/hero_l/public/images/hero_media_image/2016-11/Pumpkins%2001.JPG?h=f406e11b&itok=fRPY15St",
+            "10/14 outubro 2023",
             "O Festival de Outono é uma celebração sazonal que ocorre em muitas culturas ao redor do mundo durante a estação do outono. É uma festividade que marca a colheita, expressa a gratidão pela abundância de alimentos e comemora a transição do calor do verão para o frio do inverno.\n" +
                     "\n" +
                     "Neste festival, as pessoas se envolvem em atividades tradicionais que variam de cultura para cultura. Isso pode incluir a preparação de pratos sazonais, a realização de festas comunitárias, desfiles e decoração de espaços com temas outonais, como abóboras, folhas secas e outros elementos naturais típicos da estação.\n" +
                     "\n" +
                     "Uma característica comum em muitos festivais de outono é a ênfase na gratidão. As pessoas expressam sua apreciação pelas colheitas bem-sucedidas, pela comida que têm à mesa e pelas bênçãos que receberam durante o ano. Isso é frequentemente feito por meio de orações, rituais ou banquetes compartilhados com familiares e amigos.",
-            "Um evento temático de outono que celebra a estação. Pode incluir atividades como colheita de abóboras, pintura facial, concurso de esculturas de abóboras, venda de produtos típicos da estação e jogos ao ar livre, como corridas de saco e corridas de ovos.",
-            "https://www.visiteosusa.com.br/sites/default/files/styles/hero_l/public/images/hero_media_image/2016-11/Pumpkins%2001.JPG?h=f406e11b&itok=fRPY15St"
-        ),
+            "https://www.visiteosusa.com.br/sites/default/files/styles/hero_l/public/images/hero_media_image/2016-11/Pumpkins%2001.JPG?h=f406e11b&itok=fRPY15St",
+            ),
         Notices(
             "Semana da Saúde",
             "https://www.ergocorp.com.br/uploads/images/bra_noticias/arte-post-800x445.jpg",

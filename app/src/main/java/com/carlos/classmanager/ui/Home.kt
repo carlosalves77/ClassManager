@@ -1,9 +1,13 @@
 package com.carlos.classmanager.ui
 
 import android.content.Intent
+import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.carlos.classmanager.R
@@ -15,6 +19,9 @@ import com.carlos.classmanager.model.Notices
 import com.carlos.classmanager.utils.ListOfHomeWork
 import com.carlos.classmanager.utils.ListOfNotices
 import com.google.firebase.auth.FirebaseAuth
+import java.util.concurrent.Executors
+import java.util.concurrent.ScheduledExecutorService
+import java.util.concurrent.TimeUnit
 
 class Home : AppCompatActivity(), View.OnClickListener {
 
@@ -33,8 +40,7 @@ class Home : AppCompatActivity(), View.OnClickListener {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        @Suppress("DEPRECATION")
-//        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+
 
         binding.menuOption.setOnClickListener(this)
         auth = FirebaseAuth.getInstance()
@@ -43,8 +49,12 @@ class Home : AppCompatActivity(), View.OnClickListener {
         getAccountInfo()
         setNoticeRv()
         setHomeworkRv()
+        homeWorkShimmer()
+        noticesShimmer()
 
     }
+
+
 
     private fun getAccountInfo() {
         if (auth.currentUser != null) {
@@ -82,6 +92,24 @@ class Home : AppCompatActivity(), View.OnClickListener {
 
         addNoticeList()
     }
+
+    private fun homeWorkShimmer() {
+        Handler(Looper.getMainLooper()).postDelayed({
+            binding.homeWorkShimmer.visibility = View.GONE
+            binding.containerHomeWorkShimmer.visibility = View.GONE
+            binding.homeWorkRv.visibility = View.VISIBLE
+        }, 3000)
+
+    }
+
+    private fun noticesShimmer() {
+        Handler(Looper.getMainLooper()).postDelayed({
+            binding.noticiesShimmer.visibility = View.GONE
+            binding.noticeContentShimmer.visibility = View.GONE
+            binding.noticeRv.visibility = View.VISIBLE
+        }, 3000)
+    }
+
 
     private fun setHomeworkRv() {
 

@@ -69,6 +69,9 @@ dependencies {
     implementation("com.google.firebase:firebase-auth-ktx:22.1.2")
     implementation("com.google.android.gms:play-services-auth:20.7.0")
 
+    // Shimmer
+    implementation ("com.facebook.shimmer:shimmer:0.5.0")
+
     //Glide
     implementation ("com.github.bumptech.glide:glide:4.16.0")
 }

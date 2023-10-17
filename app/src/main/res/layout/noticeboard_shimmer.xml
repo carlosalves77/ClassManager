@@ -5,6 +5,7 @@
     android:layout_height="150dp"
     android:layout_marginEnd="10dp"
     android:elevation="4dp"
+    android:backgroundTint="@color/gray2"
     android:orientation="vertical"
     app:cardCornerRadius="12dp">
 
@@ -12,26 +13,9 @@
         android:id="@+id/noticeBoard"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/blueClean"
+
         android:orientation="vertical"
         android:padding="10dp">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:backgroundTint="@color/white"
-                app:cardCornerRadius="10dp">
-
-                <ImageView
-                    android:id="@+id/imgNoticeBoard"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:contentDescription="@string/imgNoticeBoard"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/vacation" />
-
-
-            </androidx.cardview.widget.CardView>
 
 
         <TextView

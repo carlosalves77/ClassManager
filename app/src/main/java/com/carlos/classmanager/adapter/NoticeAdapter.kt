@@ -28,7 +28,7 @@ class NoticeAdapter(private var mNotices: List<Notices>) : RecyclerView.Adapter<
             Glide.with(holder.itemView.context).load(mNotices[position].logo).into(imgNoticeBoard)
            noticeTxt.text = mNotices[position].title
            dateTxt.text = mNotices[position].date
-           navNoticiesBtn.setOnClickListener {
+            noticeBoard.setOnClickListener {
                 val intent = Intent(holder.itemView.context, Noticies::class.java)
                 intent.putExtra("title", currentNotice.title)
                 intent.putExtra("date", currentNotice.date)

@@ -1,10 +1,9 @@
 package com.carlos.classmanager.adapter
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.webkit.WebView
-import android.widget.MediaController
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.carlos.classmanager.databinding.MultimediaRowBinding
@@ -38,9 +37,7 @@ class MultimediaAdapter(private var mMultimedia: List<Multimedia>) :
                     fileContainerLayout.isVisible = false
                     fileWebViewContainerLayout.isVisible = true
                     titleFileNameWebView.text = mMultimedia[position].titleWebViewText
-                    videoView.setVideoPath("https://www.youtube.com/watch?v=Z4hknCDVBfU")
-
-
+                    val context = holder.itemView.context as Activity
 
                 }
                 2 -> {

@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".cammon.MyApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -15,48 +16,51 @@
         android:theme="@style/Theme.ClassManager"
         tools:targetApi="31">
         <activity
-            android:name=".ui.ExaminationTeste"
+            android:name=".presentation.ui.Homework.AddHomework"
             android:exported="false" />
         <activity
-            android:name=".ui.Examination"
+            android:name=".presentation.ui.ExaminationTeste"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.ui.Examination"
             android:exported="false"
             android:label="@string/title_activity_examination"
             android:theme="@style/Theme.ClassManager" />
         <activity
-            android:name=".ui.ReportCard"
+            android:name=".presentation.ui.ReportCard"
             android:exported="false" />
         <activity
-            android:name=".ui.ReportClass"
+            android:name=".presentation.ui.ReportClass"
             android:exported="false" />
         <activity
-            android:name=".ui.Multimedia"
+            android:name=".presentation.ui.Multimedia"
             android:exported="false" />
         <activity
-            android:name=".ui.Fee"
+            android:name=".presentation.ui.Fee"
             android:exported="false" />
         <activity
-            android:name=".ui.Attendance"
+            android:name=".presentation.ui.Attendance"
             android:exported="false" />
         <activity
-            android:name=".ui.Noticies"
+            android:name=".presentation.ui.Noticies"
             android:exported="false" />
         <activity
-            android:name=".ui.Profile"
+            android:name=".presentation.ui.Profile"
             android:exported="false" />
         <activity
-            android:name=".ui.SignIn"
+            android:name=".presentation.ui.SignIn"
             android:exported="false" />
         <activity
-            android:name=".ui.Menu"
+            android:name=".presentation.ui.Menu"
             android:exported="false" />
         <activity
-            android:name=".ui.Calendar"
+            android:name=".presentation.ui.Calendar"
             android:exported="false" />
         <activity
-            android:name=".ui.Home"
+            android:name=".presentation.ui.Home.Home"
             android:exported="false" />
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".presentation.ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

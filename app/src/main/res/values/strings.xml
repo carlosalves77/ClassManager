@@ -43,6 +43,13 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="fab">Fab</string>
+    <string name="adicionar_tarefa">Adicionar Tarefa</string>
+    <string name="t_tulo_da_tarefa">Título da Tarefa</string>
+    <string name="digite_a_tarefa">Digite a tarefa</string>
+    <string name="savehomework">saveHomework</string>
+    <string name="empty_homework">empty_homework</string>
+    <string name="nenhuma_tarefa_dispon_vel_no_momento">Nenhuma tarefa disponível no momento.</string>
 
 
 </resources>

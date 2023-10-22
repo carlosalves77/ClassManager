@@ -39,6 +39,7 @@
                 android:id="@+id/homeworkTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textAllCaps="true"
                 android:fontFamily="@font/nunito_bold"
                 android:textColor="@color/black"
                 android:textSize="18sp"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ui.Home">
+    tools:context=".presentation.ui.Home.Home">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -107,6 +107,7 @@
         android:layout_height="160dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/noticeTextCenter">
@@ -165,46 +166,36 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerViewContainer" />
 
-    <com.facebook.shimmer.ShimmerFrameLayout
-        android:id="@+id/homeWorkShimmer"
+
+    <LinearLayout
+        android:id="@+id/emptyHomework"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Tarefas">
 
-        <LinearLayout
-           android:id="@+id/containerHomeWorkShimmer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="visible"
-            android:orientation="vertical">
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:src="@drawable/empty_homework"
+            android:contentDescription="@string/empty_homework" />
 
-            <include layout="@layout/homework_shimmer_row" />
-
-            <include layout="@layout/homework_shimmer_row" />
-
-            <include layout="@layout/homework_shimmer_row" />
-
-            <include layout="@layout/homework_shimmer_row" />
-
-            <include layout="@layout/homework_shimmer_row" />
-
-            <include layout="@layout/homework_shimmer_row" />
-
-            <include layout="@layout/homework_shimmer_row" />
-
-            <include layout="@layout/homework_shimmer_row" />
-
-        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_regular"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:text="@string/nenhuma_tarefa_dispon_vel_no_momento"
+            />
 
 
-    </com.facebook.shimmer.ShimmerFrameLayout>
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/homeWorkRv"
@@ -218,6 +209,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Tarefas" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/blue"
+        app:tint="@color/white"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_add"
+        android:contentDescription="@string/fab" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

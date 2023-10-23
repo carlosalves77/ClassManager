@@ -83,6 +83,7 @@ class AddHomework : AppCompatActivity(), View.OnClickListener {
             val homework = HomeWork(0, title,  titleDescription, formattedDate )
 //            // Add Data to Database
             mAddNoteViewModel.addHomework(homework)
+
             // Notify User
             Toast.makeText(this, "User added", Toast.LENGTH_SHORT).show()
             // Navigate Back

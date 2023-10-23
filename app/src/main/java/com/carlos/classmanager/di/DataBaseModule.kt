@@ -1,8 +1,9 @@
-package com.carlos.classmanager.data.db
+package com.carlos.classmanager.di
 
 import android.content.Context
 import androidx.room.Room
-import androidx.room.RoomDatabase
+import com.carlos.classmanager.data.db.HomeworkDao
+import com.carlos.classmanager.data.db.HomeworkDatabase
 import com.carlos.classmanager.domain.repository.HomeworkRepository
 import dagger.Module
 import dagger.Provides

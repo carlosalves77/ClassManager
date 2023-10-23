@@ -8,6 +8,8 @@ import androidx.room.PrimaryKey
 data class HomeWork(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "Id") val id: Int,
+
+
     @ColumnInfo(name = "Description") val description: String,
     @ColumnInfo(name = "DescriptionText") val descriptionText: String,
     @ColumnInfo(name = "Date") val date: String? = null,

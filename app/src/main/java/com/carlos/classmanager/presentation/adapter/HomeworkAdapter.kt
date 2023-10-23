@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.carlos.classmanager.databinding.HomeworkRowBinding
 import com.carlos.classmanager.domain.model.HomeWork
+import com.carlos.classmanager.cammon.utils.HomeworkIdSingleton
 
 class HomeworkAdapter : RecyclerView.Adapter<HomeworkAdapter.HomeworkViewHolder>() {
 
@@ -27,6 +28,8 @@ class HomeworkAdapter : RecyclerView.Adapter<HomeworkAdapter.HomeworkViewHolder>
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: HomeworkViewHolder, position: Int) {
 
+        val currentHomework = mHomework[position]
+
         holder.binding.apply {
             homeworkTitle.text = mHomework[position].description
             homeWorkDate.text = mHomework[position].date
@@ -35,6 +38,9 @@ class HomeworkAdapter : RecyclerView.Adapter<HomeworkAdapter.HomeworkViewHolder>
             }
             homeWorkDate.text = mHomework[position].date
         }
+
+        HomeworkIdSingleton.homeworkId = currentHomework.id
+
     }
 
     override fun getItemCount() = mHomework.size
@@ -43,5 +49,8 @@ class HomeworkAdapter : RecyclerView.Adapter<HomeworkAdapter.HomeworkViewHolder>
     fun setData(newHomeWork: List<HomeWork>) {
         this.mHomework = newHomeWork
         notifyDataSetChanged()
+
     }
+
+
 }

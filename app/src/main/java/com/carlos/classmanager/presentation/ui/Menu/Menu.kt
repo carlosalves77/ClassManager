@@ -1,4 +1,4 @@
-package com.carlos.classmanager.presentation.ui
+package com.carlos.classmanager.presentation.ui.Menu
 
 
 import android.content.Intent
@@ -9,7 +9,14 @@ import androidx.activity.OnBackPressedCallback
 import com.bumptech.glide.Glide
 import com.carlos.classmanager.R
 import com.carlos.classmanager.databinding.ActivityMenuBinding
+import com.carlos.classmanager.presentation.ui.Attendance
+import com.carlos.classmanager.presentation.ui.Calendar
+import com.carlos.classmanager.presentation.ui.Examination
+import com.carlos.classmanager.presentation.ui.Fee
 import com.carlos.classmanager.presentation.ui.Home.Home
+import com.carlos.classmanager.presentation.ui.Multimedia
+import com.carlos.classmanager.presentation.ui.Profile
+import com.carlos.classmanager.presentation.ui.ReportClass
 import com.google.firebase.auth.FirebaseAuth
 
 class Menu : AppCompatActivity(), View.OnClickListener {

@@ -22,7 +22,8 @@ import com.carlos.classmanager.presentation.adapter.HomeworkAdapter
 import com.carlos.classmanager.presentation.adapter.NoticeAdapter
 import com.carlos.classmanager.presentation.adapter.SwipeGesture
 import com.carlos.classmanager.presentation.ui.Homework.AddHomework
-import com.carlos.classmanager.presentation.ui.Menu
+import com.carlos.classmanager.presentation.ui.Homework.EditNote
+import com.carlos.classmanager.presentation.ui.Menu.Menu
 import com.carlos.classmanager.presentation.viewModel.AddNoteViewModel
 import com.carlos.classmanager.presentation.viewModel.HomeViewModel
 import com.google.firebase.auth.FirebaseAuth
@@ -128,9 +129,9 @@ class Home : AppCompatActivity(), View.OnClickListener {
 
     private fun noticesShimmer() {
 
-            binding.noticiesShimmer.visibility = View.GONE
-            binding.noticeContentShimmer.visibility = View.GONE
-            binding.noticeRv.visibility = View.VISIBLE
+        binding.noticiesShimmer.visibility = View.GONE
+        binding.noticeContentShimmer.visibility = View.GONE
+        binding.noticeRv.visibility = View.VISIBLE
 
         Handler(Looper.getMainLooper()).postDelayed({
         }, 3000)
@@ -164,6 +165,14 @@ class Home : AppCompatActivity(), View.OnClickListener {
                         lifecycleScope.launch {
                             mAddNoteViewModel.deleteNote(HomeworkIdSingleton.homeworkId)
                         }
+                    }
+
+                    ItemTouchHelper.RIGHT -> {
+                        val intent = Intent(this@Home, EditNote::class.java)
+                        intent.putExtra("title", HomeworkIdSingleton.title)
+                        intent.putExtra("date", HomeworkIdSingleton.dateHomework)
+                        intent.putExtra("titleDescription", HomeworkIdSingleton.titleDescription)
+                        startActivity(intent)
                     }
                 }
 

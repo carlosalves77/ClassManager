@@ -51,6 +51,7 @@
     <string name="empty_homework">empty_homework</string>
     <string name="nenhuma_tarefa_dispon_vel_no_momento">Nenhuma tarefa disponível no momento.</string>
     <string name="imageviewpage">ImageViewPage</string>
+    <string name="tarefa">Tarefa</string>
 
 
 </resources>

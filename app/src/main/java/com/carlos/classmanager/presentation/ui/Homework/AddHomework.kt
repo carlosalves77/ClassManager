@@ -4,8 +4,10 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.Gravity
 import android.view.View
 import android.widget.Toast
+import android.widget.Toast.makeText
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -17,12 +19,13 @@ import com.carlos.classmanager.presentation.viewModel.AddNoteViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.Calendar
+import java.util.Locale
 
 @AndroidEntryPoint
 class AddHomework : AppCompatActivity(), View.OnClickListener {
 
-    private lateinit var binding : ActivityAddHomeworkBinding
-    private val  mAddNoteViewModel : AddNoteViewModel by viewModels()
+    private lateinit var binding: ActivityAddHomeworkBinding
+    private val mAddNoteViewModel: AddNoteViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddHomeworkBinding.inflate(layoutInflater)
@@ -37,14 +40,14 @@ class AddHomework : AppCompatActivity(), View.OnClickListener {
     }
 
 
-
     override fun onClick(v: View?) {
         when (v!!.id) {
-          R.id.backBtnAddHomework -> {
-              startActivity(Intent(this@AddHomework, Home::class.java))
-              overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
-              finish()
-          }
+            R.id.backBtnAddHomework -> {
+                startActivity(Intent(this@AddHomework, Home::class.java))
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+                finish()
+            }
+
             R.id.saveBtn -> {
                 addHome()
             }
@@ -66,12 +69,20 @@ class AddHomework : AppCompatActivity(), View.OnClickListener {
     private fun addHome() {
 
         val title = binding.etHomeworkTitle.text.toString()
+        val titleFirstLatterUpperCase = title.replaceFirstChar {
+            if (it.isLowerCase()) it.titlecase(
+                Locale.ROOT
+            ) else it.toString()
+        }
         val titleDescription = binding.etHomeworkDescription.text.toString()
-
+        val titleDescriptionFirstLatterUppercase = titleDescription.replaceFirstChar {
+            if (it.isLowerCase()) it.titlecase(
+                Locale.ROOT
+            ) else it.toString()
+        }
 
 
         if (inputCheck(title, titleDescription)) {
-
 
             val calendar = Calendar.getInstance()
             val currentDate = calendar.time
@@ -80,24 +91,32 @@ class AddHomework : AppCompatActivity(), View.OnClickListener {
 
 
             // Create User Object
-            val homework = HomeWork(0, title,  titleDescription, formattedDate )
+            val homework = HomeWork(
+                0,
+                titleFirstLatterUpperCase,
+                titleDescriptionFirstLatterUppercase,
+                formattedDate
+            )
 //            // Add Data to Database
             mAddNoteViewModel.addHomework(homework)
 
-            // Notify User
-            Toast.makeText(this, "User added", Toast.LENGTH_SHORT).show()
+            Toast(this).apply {
+                setGravity(Gravity.TOP, 1, 1)
+                makeText(this@AddHomework, "Tarefa adicionada", Toast.LENGTH_SHORT).show()
+            }
             // Navigate Back
             finish()
         } else {
-            Toast.makeText(this, "Please fill out all fields", Toast.LENGTH_SHORT).show()
+            Toast(this).apply {
+                setGravity(Gravity.TOP, 1, 1)
+                makeText(this@AddHomework, "Preencha todos os campos", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
     private fun inputCheck(titleHomework: String, titleHomeworkDescription: String): Boolean {
         return !(TextUtils.isEmpty(titleHomework) && TextUtils.isEmpty(titleHomeworkDescription))
     }
-
-
 
 
 }

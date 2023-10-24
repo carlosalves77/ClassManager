@@ -1,61 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="70dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="12dp"
-    android:elevation="10dp"
     android:layout_marginBottom="10dp"
-    android:backgroundTint="@color/pinkClean"
-    android:orientation="horizontal">
+    android:backgroundTint="@color/purple"
+    android:elevation="10dp"
+    android:orientation="horizontal"
+    app:cardCornerRadius="12dp">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_gravity="center_vertical"
-        >
+        android:orientation="horizontal">
 
 
-            <CheckBox
-                android:id="@+id/checkBox"
-                android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:theme="@style/CardView"
-                android:button="@drawable/ic_circle_outline"
-                android:scaleX="1.5"
-                android:scaleY="1.5"
-                />
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:button="@drawable/ic_circle_outline"
+            android:gravity="center"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            android:theme="@style/checkBoxStyle"
+            app:tint="@color/white" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginStart="5dp">
+            android:layout_marginStart="5dp"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/homeworkTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAllCaps="true"
                 android:fontFamily="@font/nunito_bold"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/homeWorkDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nunito_medium"
-                android:textColor="@color/gray" />
-
+                android:textColor="@color/white" />
 
 
         </LinearLayout>
-
 
 
     </LinearLayout>

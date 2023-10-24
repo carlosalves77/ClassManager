@@ -33,13 +33,16 @@ class HomeworkAdapter : RecyclerView.Adapter<HomeworkAdapter.HomeworkViewHolder>
         holder.binding.apply {
             homeworkTitle.text = mHomework[position].description
             homeWorkDate.text = mHomework[position].date
+
             if (homeworkTitle.text.length > 30) {
                 homeworkTitle.text = homeworkTitle.text.substring(0,21) + "..."
             }
-            homeWorkDate.text = mHomework[position].date
         }
 
         HomeworkIdSingleton.homeworkId = currentHomework.id
+        HomeworkIdSingleton.title = currentHomework.description
+        HomeworkIdSingleton.dateHomework = currentHomework.date.toString()
+        HomeworkIdSingleton.titleDescription = currentHomework.descriptionText
 
     }
 

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/blue"
     android:padding="24dp"
-    tools:context=".presentation.ui.Menu">
+    tools:context=".presentation.ui.Menu.Menu">
 
     <LinearLayout
         android:id="@+id/linearLayout"

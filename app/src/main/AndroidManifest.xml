@@ -16,6 +16,9 @@
         android:theme="@style/Theme.ClassManager"
         tools:targetApi="31">
         <activity
+            android:name=".presentation.ui.Homework.EditNote"
+            android:exported="false" />
+        <activity
             android:name=".presentation.ui.ViewPage.ViewPage"
             android:exported="false" />
         <activity
@@ -54,7 +57,7 @@
             android:name=".presentation.ui.SignIn"
             android:exported="false" />
         <activity
-            android:name=".presentation.ui.Menu"
+            android:name=".presentation.ui.Menu.Menu"
             android:exported="false" />
         <activity
             android:name=".presentation.ui.Calendar"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".presentation.ui.Homework.AddHomework">
+    tools:context=".presentation.ui.Homework.EditNote">
 
     <LinearLayout
         android:id="@+id/header_title"
@@ -32,12 +32,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="7dp"
-            android:text="@string/adicionar_tarefa"
+            android:text="@string/tarefa"
             android:textColor="@color/white"
             android:textSize="20sp" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/dateTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_bold"
+            android:gravity="end"
+            android:text="24/12/1995"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="254dp"
+            tools:layout_editor_absoluteY="169dp" />
 
+    </LinearLayout>
 
 
     <LinearLayout
@@ -53,6 +64,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header_title">
 
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/editBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="15dp"
+            android:backgroundTint="@color/blue"
+            app:cardCornerRadius="15dp">
+
+            <ImageView
+                android:id="@+id/editImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/savehomework"
+                android:padding="10dp"
+                android:src="@drawable/ic_edit" />
+        </androidx.cardview.widget.CardView>
+
+
         <androidx.cardview.widget.CardView
             android:id="@+id/saveBtn"
             android:layout_width="wrap_content"
@@ -60,6 +91,7 @@
             android:layout_gravity="center"
             android:backgroundTint="@color/blue"
             app:cardCornerRadius="15dp">
+
 
             <ImageView
                 android:id="@+id/imageView"
@@ -73,47 +105,48 @@
 
     </LinearLayout>
 
+
     <EditText
-        android:id="@+id/et_homeworkTitle"
+        android:id="@+id/et_homeworkTitleEditView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:background="@null"
         android:ems="10"
-        android:textColor="@color/black"
         android:fontFamily="@font/nunito_regular"
-        android:textColorHint="@color/gray"
         android:hint="@string/t_tulo_da_tarefa"
         android:inputType="textMultiLine"
         android:maxLength="50"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
         <requestFocus />
     </EditText>
 
-
     <EditText
-        android:id="@+id/et_homeworkDescription"
+        android:id="@+id/et_homeworkDescriptionView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="15dp"
-        android:paddingStart="5dp"
         android:background="@null"
         android:ems="10"
-        android:textColor="@color/black"
         android:fontFamily="@font/nunito_regular"
-        android:textColorHint="@color/gray"
         android:hint="@string/digite_a_tarefa"
         android:inputType="textMultiLine"
+        android:paddingStart="5dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_homeworkTitle">
+        app:layout_constraintTop_toBottomOf="@+id/et_homeworkTitleEditView">
 
         <requestFocus />
 

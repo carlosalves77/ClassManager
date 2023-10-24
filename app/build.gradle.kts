@@ -96,6 +96,7 @@ dependencies {
     // ViewPager 2
     implementation("androidx.viewpager2:viewpager2:1.0.0")
 
-    // Circle indicator
-    implementation("me.relex:circleindicator:2.1.6")
+
+    // Preference
+    implementation ("androidx.preference:preference-ktx:1.2.1")
 }

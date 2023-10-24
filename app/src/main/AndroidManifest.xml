@@ -16,6 +16,9 @@
         android:theme="@style/Theme.ClassManager"
         tools:targetApi="31">
         <activity
+            android:name=".presentation.ui.ViewPage.ViewPage"
+            android:exported="false" />
+        <activity
             android:name=".presentation.ui.Homework.AddHomework"
             android:exported="false" />
         <activity
@@ -60,7 +63,7 @@
             android:name=".presentation.ui.Home.Home"
             android:exported="false" />
         <activity
-            android:name=".presentation.ui.MainActivity"
+            android:name=".presentation.ui.SplashScreen.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

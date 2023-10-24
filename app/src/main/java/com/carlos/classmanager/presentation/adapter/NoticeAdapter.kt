@@ -2,25 +2,12 @@ package com.carlos.classmanager.presentation.adapter
 
 
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
-import android.graphics.drawable.Drawable
-import android.net.Uri
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.DataSource
-import com.bumptech.glide.load.engine.GlideException
-import com.bumptech.glide.request.RequestListener
-import com.bumptech.glide.request.target.CustomViewTarget
-import com.bumptech.glide.request.target.Target
-import com.bumptech.glide.request.transition.Transition
 import com.carlos.classmanager.R
-import com.carlos.classmanager.cammon.utils.IsLoading
 import com.carlos.classmanager.databinding.ActivityHomeBinding
 import com.carlos.classmanager.databinding.NoticeboardRowBinding
 import com.carlos.classmanager.domain.model.Notices

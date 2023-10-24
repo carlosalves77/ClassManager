@@ -76,53 +76,63 @@ class Calendar : AppCompatActivity(), View.OnClickListener {
 
     private fun addCalendarList() {
         mCalendar.add(
-            Calendar(
-                "01", "OUT", "Dia das Crianças", "Feriado"
-
-            )
-
+            Calendar("02", "OUT", "Dia Nacional do Anjo da Guarda", "Feriado")
         )
+
         mCalendar.add(
-            Calendar(
-                "01", "OUT", "Dia das Crianças", "Feriado"
-
-            )
-
+            Calendar("04", "OUT", "Dia de São Francisco de Assis", "Feriado")
         )
+
         mCalendar.add(
-            Calendar(
-                "01", "OUT", "Dia das Crianças", "Feriado"
-
-            )
-
+            Calendar("07", "OUT", "Dia do Compositor", "Feriado")
         )
+
         mCalendar.add(
-            Calendar(
-                "01", "OUT", "Dia das Crianças", "Feriado"
-
-            )
-
+            Calendar("09", "OUT", "Dia do Atletismo", "Feriado")
         )
+
         mCalendar.add(
-            Calendar(
-                "01", "OUT", "Dia das Crianças", "Feriado"
-
-            )
-
+            Calendar("11", "OUT", "Dia do Deficiente Físico", "Feriado")
         )
+
         mCalendar.add(
-            Calendar(
-                "01", "OUT", "Dia das Crianças", "Feriado"
-
-            )
-
+            Calendar("12", "OUT", "Dia de Nossa Senhora Aparecida", "Feriado")
         )
+
         mCalendar.add(
-            Calendar(
-                "01", "OUT", "Dia das Crianças", "Feriado"
+            Calendar("15", "OUT", "Dia dos Professores", "Feriado")
+        )
 
-            )
+        mCalendar.add(
+            Calendar("16", "OUT", "Dia Mundial da Alimentação", "Observação")
+        )
 
+        mCalendar.add(
+            Calendar("17", "OUT", "Dia do Eletricista", "Feriado")
+        )
+
+        mCalendar.add(
+            Calendar("19", "OUT", "Dia do Profissional de TI", "Feriado")
+        )
+
+        mCalendar.add(
+            Calendar("20", "OUT", "Dia do Arquivista", "Feriado")
+        )
+
+        mCalendar.add(
+            Calendar("24", "OUT", "Dia do Enfermeiro", "Feriado")
+        )
+
+        mCalendar.add(
+            Calendar("25", "OUT", "Dia da Democracia", "Feriado")
+        )
+
+        mCalendar.add(
+            Calendar("28", "OUT", "Dia do Servidor Público", "Feriado")
+        )
+
+        mCalendar.add(
+            Calendar("31", "OUT", "Dia das Bruxas (Halloween)", "Observação")
         )
     }
 

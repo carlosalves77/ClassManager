@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -13,10 +14,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.carlos.classmanager.R
+import com.carlos.classmanager.cammon.utils.HomeworkIdSingleton
 import com.carlos.classmanager.cammon.utils.ListOfNotices
 import com.carlos.classmanager.databinding.ActivityHomeBinding
-import com.carlos.classmanager.cammon.utils.HomeworkIdSingleton
-import com.carlos.classmanager.cammon.utils.IsLoading
 import com.carlos.classmanager.domain.model.Notices
 import com.carlos.classmanager.presentation.adapter.HomeworkAdapter
 import com.carlos.classmanager.presentation.adapter.NoticeAdapter
@@ -24,14 +24,18 @@ import com.carlos.classmanager.presentation.adapter.SwipeGesture
 import com.carlos.classmanager.presentation.ui.Homework.AddHomework
 import com.carlos.classmanager.presentation.ui.Menu
 import com.carlos.classmanager.presentation.viewModel.AddNoteViewModel
+import com.carlos.classmanager.presentation.viewModel.HomeViewModel
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class Home : AppCompatActivity(), View.OnClickListener {
 
     private val mAddNoteViewModel: AddNoteViewModel by viewModels()
+    private val homeViewModel: HomeViewModel by viewModels()
 
     private lateinit var binding: ActivityHomeBinding
     private var mNotices = ArrayList<Notices>()
@@ -58,6 +62,12 @@ class Home : AppCompatActivity(), View.OnClickListener {
 
         binding.fabBtn.setOnClickListener(this)
 
+
+        CoroutineScope(Dispatchers.IO).launch {
+            homeViewModel.state.collect { data ->
+                Log.i("MyDataResponse", "$data")
+            }
+        }
 
 
         deleteUser()

@@ -92,4 +92,10 @@ dependencies {
 
     // Xabaras
     implementation ("it.xabaras.android:recyclerview-swipedecorator:1.4")
+
+    // ViewPager 2
+    implementation("androidx.viewpager2:viewpager2:1.0.0")
+
+    // Circle indicator
+    implementation("me.relex:circleindicator:2.1.6")
 }

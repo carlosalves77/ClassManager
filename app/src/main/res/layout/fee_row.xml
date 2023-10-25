@@ -8,15 +8,17 @@
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardFee"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/blueClean"
         android:orientation="vertical"
         app:cardCornerRadius="15dp">
 
         <LinearLayout
+            android:id="@+id/backgroundFee"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/blueClean"
             android:orientation="vertical"
             android:padding="20dp">
 
@@ -34,6 +36,7 @@
                     android:textSize="16sp" />
 
                 <TextView
+                    android:id="@+id/dayFeeMouth"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/nunito_regular"
@@ -60,6 +63,7 @@
                     android:textSize="30sp" />
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/CardTextPay"
                     android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -68,6 +72,7 @@
                     app:cardCornerRadius="20sp">
 
                     <TextView
+                        android:id="@+id/textPay"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -100,6 +105,7 @@
 
             </LinearLayout>
 
+            <!-- Visible  -->
 
             <LinearLayout
                 android:id="@+id/feeOpenValues"
@@ -208,7 +214,20 @@
 
             </LinearLayout>
 
-
+       <Button
+           android:id="@+id/buttonPayFee"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:fontFamily="@font/nunito_bold"
+           android:layout_marginStart="20dp"
+           android:visibility="gone"
+           android:backgroundTint="@color/blue"
+           android:layout_marginEnd="20dp"
+           android:layout_marginTop="18dp"
+           android:textSize="20sp"
+           android:text="Pagar"
+           android:textColor="@color/white"
+           />
 
 
         </LinearLayout>

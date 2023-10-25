@@ -26,6 +26,7 @@ class ExaminationTeste : AppCompatActivity(), View.OnClickListener {
 
         binding.examinationTitle.text = intent?.getStringExtra("examinationTestTxt")
         binding.examinationTesteBackBtn.setOnClickListener(this)
+        binding.button.setOnClickListener(this)
         setExaminationRv()
         handleBackButton()
     }
@@ -33,6 +34,11 @@ class ExaminationTeste : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v!!.id) {
             R.id.examinationTesteBackBtn -> {
+                startActivity(Intent(this, Examination::class.java))
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+                finish()
+            }
+            R.id.button -> {
                 startActivity(Intent(this, Examination::class.java))
                 overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
                 finish()

@@ -35,17 +35,37 @@ class MultimediaAdapter(private var mMultimedia: List<Multimedia>) :
             when (position) {
                 0 -> {
                     typeFileText.text = mMultimedia[position].typeFileText
+                    titleFileNameTxt.text = mMultimedia[position].titleWebViewText
+                    sizeFile.text = mMultimedia[position].textSize
+
+
                 }
+
                 1 -> {
                     fileContainerLayout.isVisible = false
                     fileWebViewContainerLayout.isVisible = true
                     videoView.loadData(mMultimedia[position].webViewUrl!!, "text/html", "utf-8")
                     videoView.scrollBarStyle
+
                     titleFileNameWebView.text = mMultimedia[position].titleWebViewText
                     executeVideo(holder.binding.videoView, position)
                 }
+
                 2 -> {
+                    fileContainerLayout.isVisible = false
+                    fileWebViewContainerLayout.isVisible = true
+                    videoView.loadData(mMultimedia[position].webViewUrl!!, "text/html", "utf-8")
+                    videoView.scrollBarStyle
+
+                    titleFileNameWebView.text = mMultimedia[position].titleWebViewText
+                    executeVideo(holder.binding.videoView, position)
+                }
+
+                else -> {
                     typeFileText.text = mMultimedia[position].typeFileText
+                    titleFileNameTxt.text = mMultimedia[position].titleWebViewText
+                    sizeFile.text = mMultimedia[position].textSize
+                    sizeFile.visibility = View.VISIBLE
                 }
             }
         }
@@ -57,8 +77,8 @@ class MultimediaAdapter(private var mMultimedia: List<Multimedia>) :
 
     @SuppressLint("SetJavaScriptEnabled")
     private fun executeVideo(videoUrl: WebView, position: Int) {
-    videoUrl.settings.javaScriptEnabled = true
-        videoUrl.webChromeClient = object  : WebChromeClient() {
+        videoUrl.settings.javaScriptEnabled = true
+        videoUrl.webChromeClient = object : WebChromeClient() {
             override fun onShowCustomView(view: View?, callback: CustomViewCallback?) {
                 super.onShowCustomView(view, callback)
             }

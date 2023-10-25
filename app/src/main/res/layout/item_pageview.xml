@@ -34,48 +34,27 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <androidx.cardview.widget.CardView
+        <Button
             android:id="@+id/nextBtn"
-            android:layout_width="50dp"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_gravity="end"
-            android:visibility="gone"
-            android:layout_marginBottom="34dp"
+            android:layout_marginStart="34dp"
             android:layout_marginEnd="34dp"
-            android:backgroundTint="@color/white"
-            app:cardCornerRadius="26dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:src="@drawable/arrow_right"
-                app:tint="@color/gray" />
-
-        </androidx.cardview.widget.CardView>
-
-        <TextView
-            android:id="@+id/letStart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="Vamos começar"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/nunito_regular"
+            android:layout_marginBottom="34dp"
+            android:backgroundTint="@color/purple"
             android:visibility="gone"
-            android:textSize="22sp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/nunito_bold"
-            android:layout_marginBottom="44dp"
-            android:layout_marginEnd="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/nextBtn" />
-
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
 
 

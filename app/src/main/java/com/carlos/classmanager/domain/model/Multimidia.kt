@@ -5,4 +5,5 @@ data class Multimedia(
     val typeFileText: String? = null,
     val titleWebViewText: String? = null,
     val webViewUrl: String? = null,
+    val textSize: String? = null
 )

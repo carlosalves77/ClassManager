@@ -47,7 +47,6 @@ class ViewPageAdapter(
             when (position) {
                 2 -> {
                     nextBtn.visibility = View.VISIBLE
-                    letStart.visibility = View.VISIBLE
                 }
             }
             nextBtn.setOnClickListener {

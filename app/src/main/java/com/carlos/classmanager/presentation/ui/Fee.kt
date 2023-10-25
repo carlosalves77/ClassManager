@@ -63,18 +63,18 @@ class Fee : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun addFeeList() {
-        mFee.add(Fee("R$ 600", "Boleto de Janeiro"))
-        mFee.add(Fee("R$ 600", "Boleto de Fevereiro "))
-        mFee.add(Fee("R$ 600", "Boleto de Março"))
-        mFee.add(Fee("R$ 600", "Boleto de Abril"))
-        mFee.add(Fee("R$ 600", "Boleto de Maio"))
-        mFee.add(Fee("R$ 600", "Boleto de Junho"))
-        mFee.add(Fee("R$ 600", "Boleto de Julho"))
-        mFee.add(Fee("R$ 600", "Boleto de Agosto"))
-        mFee.add(Fee("R$ 600", "Boleto de Setembro"))
-        mFee.add(Fee("R$ 600", "Boleto de Outubro"))
-        mFee.add(Fee("R$ 600", "Boleto de Novembro"))
-        mFee.add(Fee("R$ 600", "Boleto de Dezembro"))
+        mFee.add(Fee("R$ 600", "Boleto de Janeiro", "5 Janeiro"))
+        mFee.add(Fee("R$ 600", "Boleto de Fevereiro", "5 Fevereiro"))
+        mFee.add(Fee("R$ 600", "Boleto de Março", "5 Março"))
+        mFee.add(Fee("R$ 600", "Boleto de Abril", "5 Abril"))
+        mFee.add(Fee("R$ 600", "Boleto de Maio", "5 Maio"))
+        mFee.add(Fee("R$ 600", "Boleto de Junho ", "5 Junho"))
+        mFee.add(Fee("R$ 600", "Boleto de Julho", "5 Julho"))
+        mFee.add(Fee("R$ 600", "Boleto de Agosto", "5 Agosto"))
+        mFee.add(Fee("R$ 600", "Boleto de Setembro", "5 Setembro"))
+        mFee.add(Fee("R$ 600", "Boleto de Outubro", "5 Outubro"))
+        mFee.add(Fee("R$ 600", "Boleto de Novembro", "5 Novembro"))
+        mFee.add(Fee("R$ 600", "Boleto de Dezembro", "5 Dezembro"))
     }
 
 }

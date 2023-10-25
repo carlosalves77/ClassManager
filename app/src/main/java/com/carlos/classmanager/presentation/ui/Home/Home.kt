@@ -169,6 +169,7 @@ class Home : AppCompatActivity(), View.OnClickListener {
 
                     ItemTouchHelper.RIGHT -> {
                         val intent = Intent(this@Home, EditNote::class.java)
+                        intent.putExtra("id", HomeworkIdSingleton.homeworkId)
                         intent.putExtra("title", HomeworkIdSingleton.title)
                         intent.putExtra("date", HomeworkIdSingleton.dateHomework)
                         intent.putExtra("titleDescription", HomeworkIdSingleton.titleDescription)

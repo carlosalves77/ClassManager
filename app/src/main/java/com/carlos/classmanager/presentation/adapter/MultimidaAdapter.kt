@@ -40,10 +40,9 @@ class MultimediaAdapter(private var mMultimedia: List<Multimedia>) :
                     fileContainerLayout.isVisible = false
                     fileWebViewContainerLayout.isVisible = true
                     videoView.loadData(mMultimedia[position].webViewUrl!!, "text/html", "utf-8")
+                    videoView.scrollBarStyle
                     titleFileNameWebView.text = mMultimedia[position].titleWebViewText
                     executeVideo(holder.binding.videoView, position)
-                    val context = holder.itemView.context as Activity
-
                 }
                 2 -> {
                     typeFileText.text = mMultimedia[position].typeFileText

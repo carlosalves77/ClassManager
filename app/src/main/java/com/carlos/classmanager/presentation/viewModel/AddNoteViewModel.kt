@@ -29,7 +29,7 @@ class AddNoteViewModel @Inject constructor(
         }
     }
 
-    fun updateNote(homework: HomeWork) {
+    fun updateHomework(homework: HomeWork) {
         viewModelScope.launch(Dispatchers.IO) {
             homeworkRepository.updateHomeWork(homework)
         }

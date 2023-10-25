@@ -24,6 +24,7 @@ import java.util.Locale
 @AndroidEntryPoint
 class AddHomework : AppCompatActivity(), View.OnClickListener {
 
+
     private lateinit var binding: ActivityAddHomeworkBinding
     private val mAddNoteViewModel: AddNoteViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {

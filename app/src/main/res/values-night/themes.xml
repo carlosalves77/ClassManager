@@ -5,6 +5,8 @@
         <item name="colorPrimary">@color/blue</item>
 
     </style>
+    
+    
 
     <style name="CalenderViewCustom" parent="Theme.AppCompat">
         <item name="colorAccent">@color/purple</item>
@@ -16,6 +18,10 @@
         <item name="colorPrimary">@color/green</item>
         <item name="android:actionBarItemBackground">@null</item>
         <item name="android:colorBackground">@color/purple</item>
+    </style>
+
+    <style name="ThemeOverlay.AppTheme.TextInputEditText.Outlined" parent="">
+        <item name="colorControlActivated">@color/black</item>
     </style>
 
 

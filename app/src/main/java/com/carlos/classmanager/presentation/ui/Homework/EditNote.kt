@@ -2,7 +2,9 @@ package com.carlos.classmanager.presentation.ui.Homework
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -57,8 +59,13 @@ class EditNote : AppCompatActivity(), View.OnClickListener {
                 binding.etHomeworkDescriptionView.isFocusableInTouchMode = false
 
 
-                binding.saveBtn.visibility = View.VISIBLE
-                binding.editBtn.visibility = View.GONE
+                binding.saveBtn.visibility = View.GONE
+                binding.editBtn.visibility = View.VISIBLE
+
+                Toast(this).apply {
+                    setGravity(Gravity.CENTER_VERTICAL, 2, 2)
+                    Toast.makeText(this@EditNote, "Tarefa Alterada", Toast.LENGTH_SHORT).show()
+                }
 
             }
 

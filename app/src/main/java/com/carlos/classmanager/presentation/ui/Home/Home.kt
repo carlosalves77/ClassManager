@@ -84,7 +84,7 @@ class Home : AppCompatActivity(), View.OnClickListener {
             val nameProfile = auth.currentUser?.displayName
             val profileUrl = auth.currentUser?.photoUrl
             binding.nameTeacherText.text = nameProfile
-            Glide.with(this).load(profileUrl).into(binding.imgProfile)
+            Glide.with(this).load(profileUrl).placeholder(R.drawable.progress_animation).into(binding.imgProfile)
         }
     }
 
@@ -150,9 +150,11 @@ class Home : AppCompatActivity(), View.OnClickListener {
                 adapterHomeWork.setData(data)
                 if (data.isEmpty()) {
                     binding.emptyHomework.visibility = View.VISIBLE
+                    binding.newTaskTxt.visibility = View.VISIBLE
                 } else {
                     binding.emptyHomework.visibility = View.GONE
                     binding.homeWorkRv.visibility = View.VISIBLE
+                    binding.newTaskTxt.visibility = View.GONE
                 }
             }
         }

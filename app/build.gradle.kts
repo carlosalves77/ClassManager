@@ -67,10 +67,10 @@ dependencies {
     kapt("com.google.dagger:hilt-android-compiler:$daggerV")
 
     // Retrofit
-    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation ("com.squareup.okhttp3:okhttp:5.0.0-alpha.2")
-    implementation ("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.2")
+    implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2")
 
     // lifecycle
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
@@ -85,18 +85,22 @@ dependencies {
     implementation("com.google.android.gms:play-services-auth:20.7.0")
 
     // Shimmer
-    implementation ("com.facebook.shimmer:shimmer:0.5.0")
+    implementation("com.facebook.shimmer:shimmer:0.5.0")
 
     //Glide
-    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
 
     // Xabaras
-    implementation ("it.xabaras.android:recyclerview-swipedecorator:1.4")
+    implementation("it.xabaras.android:recyclerview-swipedecorator:1.4")
 
     // ViewPager 2
     implementation("androidx.viewpager2:viewpager2:1.0.0")
 
 
     // Preference
-    implementation ("androidx.preference:preference-ktx:1.2.1")
+    implementation("androidx.preference:preference-ktx:1.2.1")
+
+    //  Swiperefresh
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+
 }
